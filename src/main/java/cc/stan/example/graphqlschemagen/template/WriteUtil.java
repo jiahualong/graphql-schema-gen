@@ -1,6 +1,7 @@
 package cc.stan.example.graphqlschemagen.template;
 
 import cc.stan.example.graphqlschemagen.mod.Clz;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.BufferedOutputStream;
 import java.io.IOException;
@@ -12,6 +13,7 @@ import java.nio.file.Paths;
 import static java.nio.file.StandardOpenOption.CREATE;
 
 /** 写入类 */
+@Slf4j
 public class WriteUtil {
 
 
@@ -31,21 +33,13 @@ public class WriteUtil {
         }
     }
 
-    /** 写 Model.java */
-    public static void writeModel(String content, Clz clz) throws IOException {
-        WriteUtil.write(content, String.format("%s.java", clz.getClzName()));
+    public static void write(String data, Clz clz, String formatString) {
+        try {
+            WriteUtil.write(data, String.format(formatString, clz.getClzName()));
+        } catch (Exception e) {
+            log.warn("写入文件失败,{}", e.getMessage());
+        }
     }
 
-    /** 写 Ctl.java */
-    public static void writeCtl(String content, Clz clz) throws IOException {
-        WriteUtil.write(content, String.format("%sCtl.java", clz.getClzName()));
-    }
 
-    public static void writeDAO(String dao, Clz clz) throws IOException {
-        WriteUtil.write(dao, String.format("%sDAO.java", clz.getClzName()));
-    }
-
-    public static void writeDTO(String dto, Clz clz) throws IOException {
-        WriteUtil.write(dto, String.format("%sDTO.java", clz.getClzName()));
-    }
 }

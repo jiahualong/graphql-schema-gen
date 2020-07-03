@@ -27,6 +27,8 @@ public class Clz {
     private List<Prop> propList;
     /** VO属性 */
     private List<Prop> propVOList;
+    /** Input属性 */
+    private List<Prop> propInputList;
 
     public Clz fill() {
         clzName = CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, tblName);
@@ -42,6 +44,14 @@ public class Clz {
                 return true;
             }
         }).collect(toList());
+        propInputList = propList.stream().filter(p -> {
+            if (p.getClzProp().indexOf("tenantId") >= 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }).collect(toList());
+
         return this;
     }
 }

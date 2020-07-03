@@ -20,7 +20,7 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @Accessors(chain = true)
 public class BizInput {
-<#list proVOList as pro >
+<#list propInputList as pro >
     /** ${pro.comm} */
     private ${pro.clzType} ${pro.clzProp};
 </#list>

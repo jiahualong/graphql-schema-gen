@@ -1,6 +1,7 @@
 package cc.stan.example.graphqlschemagen;
 
 import cc.stan.example.graphqlschemagen.mod.Clz;
+import cc.stan.example.graphqlschemagen.mod.FtlAndJava;
 import cc.stan.example.graphqlschemagen.template.FreemarkerGen;
 import cc.stan.example.graphqlschemagen.template.WriteUtil;
 import freemarker.template.TemplateException;
@@ -31,7 +32,7 @@ public class Test1 {
 
 
         List<String> sql = Arrays.asList(
-                "info_sys_source_db, 资源数据来源-从数据库获取的",
+                "sys_info, 资源数据来源-从数据库获取的",
                 "id             ,bigint            ,ID",
                 "tenant_id      ,bigint            ,租户id",
                 "org_id         ,bigint            ,所属机构ID",
@@ -57,16 +58,31 @@ public class Test1 {
         );
         Clz clz = fromSql(sql);
 
-        String model = gen.genModelFtl(clz, program, author, create);
-        WriteUtil.writeModel(model, clz);
+        List<FtlAndJava> ftlAndJavaList = Arrays.asList(
+                new FtlAndJava("Model.ftl", "%s.java"),
+                new FtlAndJava("Ctl.ftl", "%sCtl.java"),
+                new FtlAndJava("DAO.ftl", "%sDAO.java"),
+                new FtlAndJava("DTO.ftl", "%sDTO.java"),
+                new FtlAndJava("FindListOutput.ftl", "Find%sListOutput.java"),
+                new FtlAndJava("Ictl.ftl", "I%sCtl.java"),
+                new FtlAndJava("Input.ftl", "%sInput.java"),
+                new FtlAndJava("IService.ftl", "I%sService.java"),
+                new FtlAndJava("Mapper.ftl", "%sMapper.java"),
+                new FtlAndJava("MapStruct.ftl", "%sMapStruct.java"),
+                new FtlAndJava("Model.ftl", "%sModel.java"),
+                new FtlAndJava("PropertyResolver.ftl", "%sPropertyResolver.java"),
+                new FtlAndJava("Resolver.ftl", "%sResolver.java"),
+                new FtlAndJava("Service.ftl", "%sService.java"),
+                new FtlAndJava("VO.ftl", "%sVO.java"),
+                new FtlAndJava("VOMapStruct.ftl", "%sVOMapStruct.java"),
+                new FtlAndJava("graphqls.ftl", "%s.graphqls")
+        );
 
-        String ctl = gen.genCtlFtl(clz, program, author, create);
-        WriteUtil.writeCtl(ctl, clz);
+        ftlAndJavaList.stream().forEach(fj -> {
+            System.out.println("gen," + fj);
+            String data = gen.gen(clz, program, author, create, fj.getFtl());
+            WriteUtil.write(data, clz, fj.getJava());
+        });
 
-        String dao = gen.genDAOFtl(clz, program, author, create);
-        WriteUtil.writeDAO(dao, clz);
-
-        String dto = gen.genDTOFtl(clz, program, author, create);
-        WriteUtil.writeDTO(dao, clz);
     }
 }
