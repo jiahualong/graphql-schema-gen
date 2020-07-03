@@ -2,22 +2,36 @@ package cc.stan.example.graphqlschemagen;
 
 import cc.stan.example.graphqlschemagen.mod.Clz;
 import cc.stan.example.graphqlschemagen.template.FreemarkerGen;
+import cc.stan.example.graphqlschemagen.template.WriteUtil;
 import freemarker.template.TemplateException;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
 
 import static cc.stan.example.graphqlschemagen.mod.ClzUtil.fromSql;
 
+@SpringBootTest
 public class Test1 {
+
+    @Autowired
+    private FreemarkerGen gen;
 
     @Test
     public void t1() throws IOException, TemplateException {
 
+        String program = "DRD2-SERVICE";
+        String author = "jhl";
+        String create = LocalDate.now().format(DateTimeFormatter.ISO_DATE);
+
+
         List<String> sql = Arrays.asList(
-                "info_sys_source_db, 资源数据来源-从数据库获取",
+                "info_sys_source_db, 资源数据来源-从数据库获取的",
                 "id             ,bigint            ,ID",
                 "tenant_id      ,bigint            ,租户id",
                 "org_id         ,bigint            ,所属机构ID",
@@ -42,9 +56,11 @@ public class Test1 {
                 "is_del         ,tinyint           ,逻辑删除"
         );
         Clz clz = fromSql(sql);
-        System.out.println( FreemarkerGen.gen(clz));
 
-        System.out.println(clz);
+        String model = gen.genModelFtl(clz, program, author, create);
+        WriteUtil.writeModel(model, clz);
 
+        String ctl = gen.genCtlFtl(clz, program, author, create);
+        WriteUtil.writeCtl(ctl, clz);
     }
 }

@@ -11,7 +11,14 @@ import lombok.experimental.Accessors;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-/** ${clz.clzName!'-'} */
+/**
+ * ${clz.clzName!'-'}
+ *
+ * @program: ${program!'-'}
+ * @description:${clz.comment!'-'}
+ * @author: ${author!'-'}
+ * @create: ${create!'-'}
+*/
 @TableName("${clz.tblName!'-'}")
 @Data
 @Builder
@@ -20,9 +27,8 @@ import java.util.Objects;
 @Accessors(chain = true)
 public class ${clz.clzName!'-'} {
 
-
 <#list proList as pro >
-    //${pro.comm!'-'}
+    /** ${pro.comm!'-'} */
     private ${pro.clzType!'-'} ${pro.clzProp!'-'};
 </#list>
 
