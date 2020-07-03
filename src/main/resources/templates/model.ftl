@@ -12,27 +12,27 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 /**
- * ${clz.clzName!'-'}
+ * ${clz.clzName} 实体
  *
- * @program: ${program!'-'}
- * @description:${clz.comment!'-'}
- * @author: ${author!'-'}
- * @create: ${create!'-'}
+ * @program: ${program}
+ * @description:${clz.comment}
+ * @author: ${author}
+ * @create: ${create}
 */
-@TableName("${clz.tblName!'-'}")
+@TableName("${clz.tblName}")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(chain = true)
-public class ${clz.clzName!'-'} {
+public class ${clz.clzName} {
 
 <#list proList as pro >
-    /** ${pro.comm!'-'} */
-    private ${pro.clzType!'-'} ${pro.clzProp!'-'};
+    /** ${pro.comm} */
+    private ${pro.clzType} ${pro.clzProp};
 </#list>
 
-public boolean isNew() {
-    return Objects.nonNull(this.id) ? false : true;
+    public boolean isNew() {
+        return Objects.nonNull(this.id) ? false : true;
     }
 }

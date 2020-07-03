@@ -62,5 +62,11 @@ public class Test1 {
 
         String ctl = gen.genCtlFtl(clz, program, author, create);
         WriteUtil.writeCtl(ctl, clz);
+
+        String dao = gen.genDAOFtl(clz, program, author, create);
+        WriteUtil.writeDAO(dao, clz);
+
+        String dto = gen.genDTOFtl(clz, program, author, create);
+        WriteUtil.writeDTO(dao, clz);
     }
 }

@@ -23,15 +23,6 @@ public class FreemarkerGen {
         config.setClassForTemplateLoading(FreemarkerGen.class, "/templates");
     }
 
-    /** 生成Model.ftl */
-    public String genModelFtl(Clz clz, String program, String author, String create) throws IOException, TemplateException {
-        return gen(clz, program, author, create, "Model.ftl");
-    }
-
-    /** 生成 ctl.ftl */
-    public String genCtlFtl(Clz clz, String program, String author, String create) throws IOException, TemplateException {
-        return gen(clz, program, author, create, "Ctl.ftl");
-    }
 
     /** 生成器 */
     public String gen(Clz clz, String program, String author, String create, String tempFileName) throws IOException, TemplateException {
@@ -49,4 +40,23 @@ public class FreemarkerGen {
         return FreeMarkerTemplateUtils.processTemplateIntoString(template, properties);
     }
 
+    /** 生成Model.ftl */
+    public String genModelFtl(Clz clz, String program, String author, String create) throws IOException, TemplateException {
+        return gen(clz, program, author, create, "Model.ftl");
+    }
+
+    /** 生成 ctl.ftl */
+    public String genCtlFtl(Clz clz, String program, String author, String create) throws IOException, TemplateException {
+        return gen(clz, program, author, create, "Ctl.ftl");
+    }
+
+    /** 生成 DAO.ftl */
+    public String genDAOFtl(Clz clz, String program, String author, String create) throws IOException, TemplateException {
+        return gen(clz, program, author, create, "DAO.ftl");
+    }
+
+    /** 生成 DTO.ftl */
+    public String genDTOFtl(Clz clz, String program, String author, String create) throws IOException, TemplateException {
+        return gen(clz, program, author, create, "DTO.ftl");
+    }
 }

@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
-* ${clz.clzName!'-'}
-*
-* @program: ${program!'-'}
-* @description:${clz.comment!'-'}
-* @author: ${author!'-'}
-* @create: ${create!'-'}
-*/
+ * ${clz.clzName} API接口实现类
+ *
+ * @program: ${program}
+ * @description:${clz.comment}
+ * @author: ${author}
+ * @create: ${create}
+ */
 @Slf4j
 @RestController
 public class ${clz.clzName}Ctl implements I${clz.clzName}Ctl {
@@ -27,21 +27,36 @@ public class ${clz.clzName}Ctl implements I${clz.clzName}Ctl {
     private I${clz.clzName}Service ${clz.clzName?uncap_first}Service;
     private IUserService userService;
 
-    public ${clz.clzName}Ctl(IDutyService ${clz.clzName?uncap_first}Service, IUserService userService) {
+    public ${clz.clzName}Ctl(I${clz.clzName}Service ${clz.clzName?uncap_first}Service, IUserService userService) {
         this.${clz.clzName?uncap_first}Service = ${clz.clzName?uncap_first}Service;
         this.userService = userService;
     }
 
+    /**
+     * 通过条件查询
+     * @param input 查询条件
+     * @return  查询结果
+     */
     @Override
     public PaginationResult<${clz.clzName}DTO> find${clz.clzName}List(Find${clz.clzName}ListInput input) {
         return ${clz.clzName?uncap_first}Service.find${clz.clzName}List(input, userService.getUser());
     }
 
+    /**
+     * 添加或更新
+     * @param input 要添加或更新的实体
+     * @return 添加或更新后的实体
+     */
     @Override
-    public DutyDTO addUpdateDuty(${clz.clzName}Input input) {
+    public ${clz.clzName}DTO addUpdate${clz.clzName}(${clz.clzName}Input input) {
         return ${clz.clzName?uncap_first}Service.addUpdate${clz.clzName}(input, userService.getUser());
     }
 
+    /**
+     * 批量删除
+     * @param IdList  要删除的Id
+     * @return  删除成功的Id
+     */
     @Override
     public List<Long> del${clz.clzName}ByIdList(List<Long> ${clz.clzName?uncap_first}IdList) {
         return ${clz.clzName?uncap_first}Service.del${clz.clzName}ByIdList(${clz.clzName?uncap_first}IdList, userService.getUser());

@@ -14,15 +14,6 @@ import static java.nio.file.StandardOpenOption.CREATE;
 /** 写入类 */
 public class WriteUtil {
 
-    /** 写 Model.java */
-    public static void writeModel(String content, Clz clz) throws IOException {
-        WriteUtil.write(content, String.format("%s.java", clz.getClzName()));
-    }
-
-    /** 写 Ctl.java */
-    public static void writeCtl(String content, Clz clz) throws IOException {
-        WriteUtil.write(content, String.format("%sCtl.java", clz.getClzName()));
-    }
 
     /** 写入方式 */
     public static void write(String content, String file) throws IOException {
@@ -40,4 +31,21 @@ public class WriteUtil {
         }
     }
 
+    /** 写 Model.java */
+    public static void writeModel(String content, Clz clz) throws IOException {
+        WriteUtil.write(content, String.format("%s.java", clz.getClzName()));
+    }
+
+    /** 写 Ctl.java */
+    public static void writeCtl(String content, Clz clz) throws IOException {
+        WriteUtil.write(content, String.format("%sCtl.java", clz.getClzName()));
+    }
+
+    public static void writeDAO(String dao, Clz clz) throws IOException {
+        WriteUtil.write(dao, String.format("%sDAO.java", clz.getClzName()));
+    }
+
+    public static void writeDTO(String dto, Clz clz) throws IOException {
+        WriteUtil.write(dto, String.format("%sDTO.java", clz.getClzName()));
+    }
 }
