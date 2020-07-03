@@ -30,6 +30,7 @@ public class FreemarkerGen {
             {
                 put("clz", clz);
                 put("proList", clz.getPropList());
+                put("proVOList", clz.getPropVOList());
                 put("program", program);
                 put("author", author);
                 put("create", create);

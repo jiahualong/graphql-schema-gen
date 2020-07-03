@@ -25,10 +25,23 @@ public class Clz {
     private String comment;
     /** 属性 */
     private List<Prop> propList;
+    /** VO属性 */
+    private List<Prop> propVOList;
 
     public Clz fill() {
         clzName = CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, tblName);
         propList = propList.stream().map(Prop::fill).collect(toList());
+        propVOList = propList.stream().filter(p -> {
+            if (p.getClzProp().indexOf("creator") >= 0
+                    || p.getClzProp().indexOf("modifier") >= 0
+                    || p.getClzProp().indexOf("createTm") >= 0
+                    || p.getClzProp().indexOf("modifyTm") >= 0
+                    || p.getClzProp().indexOf("isDel") >= 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }).collect(toList());
         return this;
     }
 }

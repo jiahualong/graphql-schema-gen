@@ -1,92 +1,74 @@
-package com.seaboxdata.drd2.resolver.biz;
+package resolver;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
-import com.seaboxdata.drd2.api.controller.IBizCtl;
-import com.seaboxdata.drd2.api.dto.biz.*;
+import com.seaboxdata.drd2.api.controller.I${clz.clzName}Ctl;
+import com.seaboxdata.drd2.api.dto.${clz.clzName?uncap_first}.*;
 import com.seaboxdata.drd2.api.dto.page.PaginationResult;
-import com.seaboxdata.drd2.api.input.biz.*;
-import com.seaboxdata.drd2.vo.biz.*;
-import com.seaboxdata.drd2.vo.biz.mapstruct.*;
-import com.seaboxdata.drd2.vo.biz.output.FindBizListOutput;
+import com.seaboxdata.drd2.api.input.${clz.clzName?uncap_first}.*;
+import com.seaboxdata.drd2.vo.${clz.clzName?uncap_first}.*;
+import com.seaboxdata.drd2.vo.${clz.clzName?uncap_first}.mapstruct.*;
+import com.seaboxdata.drd2.vo.${clz.clzName?uncap_first}.output.Find${clz.clzName}ListOutput;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Objects;
 
-/** 业务事项 */
+/**
+ * ${clz.clzName} GraphQL 实现
+ *
+ * @program: ${program}
+ * @description:${clz.comment}
+ * @author: ${author}
+ * @create: ${create}
+ */
 @Component
-public class BizResolver implements GraphQLQueryResolver, GraphQLMutationResolver {
+public class ${clz.clzName}Resolver implements GraphQLQueryResolver, GraphQLMutationResolver {
 
-private IBizCtl bizCtl;
+    private I${clz.clzName}Ctl ${clz.clzName?uncap_first}Ctl;
 
-public BizResolver(IBizCtl bizCtl) {
-this.bizCtl = bizCtl;
-}
-
-/** 通过业务事项ID获取业务事项 */
-BizVO findBizById(Long id) {
-BizDTO bizDTO = bizCtl.findBizById(id);
-return Objects.nonNull(bizDTO) ? BizVOMapStruct.INSTANCE.fromDTO(bizDTO) : BizVO.empty();
-}
-
-/** 通过组织ID获取业务事项列表 */
-FindBizListOutput findBizList(FindBizListInput input) {
-input = Objects.nonNull(input) ? input : FindBizListInput.empty();
-PaginationResult<BizDTO> output = bizCtl.findBizList(input);
-    return FindBizListOutput.fromDTO(output);
+    public ${clz.clzName}Resolver(I${clz.clzName}Ctl ${clz.clzName?uncap_first}Ctl) {
+        this.${clz.clzName?uncap_first}Ctl = ${clz.clzName?uncap_first}Ctl;
     }
 
-    /**  --- 业务事项主体 --- */
-    /** 添加或更新业务事项(主体)(周边通过其它add方法添加) */
-    BizVO addUpdateBiz(BizInput input) {
-    BizDTO bizDTO = bizCtl.addUpdateBiz(input);
-    return Objects.nonNull(bizDTO) ? BizVOMapStruct.INSTANCE.fromDTO(bizDTO) : BizVO.empty();
+    /**
+     * 通过编号查询 ${clz.comment}
+     * @param id 编号
+     * @return 查询结果
+     */
+    ${clz.clzName}VO find${clz.clzName}ById(Long id) {
+        ${clz.clzName}DTO ${clz.clzName?uncap_first}DTO = ${clz.clzName?uncap_first}Ctl.find${clz.clzName}ById(id);
+        return Objects.nonNull(${clz.clzName?uncap_first}DTO) ? ${clz.clzName}VOMapStruct.INSTANCE.fromDTO(${clz.clzName?uncap_first}DTO) : ${clz.clzName}VO.empty();
     }
 
-    /** 删除业务事项(主体+周边) */
-    List<Long> delBiz(List<Long> bizIdList) {
-            return bizCtl.delBizByIdList(bizIdList);
-            }
+    /**
+     * 通过条件查询 ${clz.comment}
+     * @param input 查询条件
+     * @return 查询结果
+     */
+    Find${clz.clzName}ListOutput find${clz.clzName}List(Find${clz.clzName}ListInput input) {
+        input = Objects.nonNull(input) ? input : Find${clz.clzName}ListInput.empty();
+        PaginationResult<${clz.clzName}DTO> output = ${clz.clzName?uncap_first}Ctl.find${clz.clzName}List(input);
+        return Find${clz.clzName}ListOutput.fromDTO(output);
+    }
 
-            /** --- 业务事项-设立依据 --- */
-            BizAccordLawVO addUpdateBizAccordLaw(BizAccordLawInput input) {
-            BizAccordLawDTO bizAccordLawDTO = bizCtl.addUpdateBizAccordLaw(input);
-            return Objects.nonNull(bizAccordLawDTO) ? BizAccordLawVOMapStruct.INSTANCE.fromDTO(bizAccordLawDTO) : BizAccordLawVO.empty();
-            }
+    /**
+     * 添加或更新 ${clz.comment}
+     * @param input 要添加或更新的对象
+     * @return 查询结果
+     */
+    ${clz.clzName}VO addUpdate${clz.clzName}(${clz.clzName}Input input) {
+        ${clz.clzName}DTO ${clz.clzName?uncap_first}DTO = ${clz.clzName?uncap_first}Ctl.addUpdate${clz.clzName}(input);
+        return Objects.nonNull(${clz.clzName?uncap_first}DTO) ? ${clz.clzName}VOMapStruct.INSTANCE.fromDTO(${clz.clzName?uncap_first}DTO) : ${clz.clzName}VO.empty();
+    }
 
-            List<Long> delBizAccordLaw(List<Long> bizAccordLawIdList) {
-                    return bizCtl.delBizAccordLaw(bizAccordLawIdList);
-                    }
+    /**
+     * 通过编号批量删除 ${clz.comment}
+     * @param ${clz.clzName?uncap_first}IdList 编号列表
+     * @return 成功删除的编号列表
+     */
+    List<Long> del${clz.clzName}(List<Long> ${clz.clzName?uncap_first}IdList) {
+        return ${clz.clzName?uncap_first}Ctl.del${clz.clzName}ByIdList(${clz.clzName?uncap_first}IdList);
+    }
 
-                    /** --- 业务事项-申报材料 --- */
-                    BizDeclaredFileVO addUpdateBizDeclaredFile(BizDeclaredFileInput input) {
-                    BizDeclaredFileDTO bizDeclaredFileDTO = bizCtl.addUpdateBizDeclaredFile(input);
-                    return Objects.nonNull(bizDeclaredFileDTO) ? BizDeclaredFileVOMapStruct.INSTANCE.fromDTO(bizDeclaredFileDTO) : BizDeclaredFileVO.empty();
-                    }
-
-                    public List<Long> delBizDeclaredFile(List<Long> bizDeclaredFileIdList) {
-                            return bizCtl.delBizDeclaredFile(bizDeclaredFileIdList);
-                            }
-
-                            /** --- 业务事项-常见问题 --- */
-                            BizFaqVO addUpdateBizFaq(BizFaqInput input) {
-                            BizFaqDTO bizFaqDTO = bizCtl.addUpdateBizFaq(input);
-                            return Objects.nonNull(bizFaqDTO) ? BizFaqVOMapStruct.INSTANCE.fromDTO(bizFaqDTO) : BizFaqVO.empty();
-                            }
-
-                            List<Long> delBizFaq(List<Long> bizFaqIdList) {
-                                    return bizCtl.delBizFaq(bizFaqIdList);
-                                    }
-
-                                    /** --- 业务事项-办理流程 --- */
-
-                                    BizProcessFlowVO addUpdateBizProcessFlow(BizProcessFlowInput input) {
-                                    BizProcessFlowDTO bizProcessFlowDTO = bizCtl.addUpdateBizProcessFlow(input);
-                                    return Objects.nonNull(bizProcessFlowDTO) ? BizProcessFlowVOMapStruct.INSTANCE.fromDTO(bizProcessFlowDTO) : BizProcessFlowVO.empty();
-                                    }
-
-                                    List<Long> delBizProcessFlow(List<Long> bizProcessFlowIdList) {
-                                            return bizCtl.delBizProcessFlow(bizProcessFlowIdList);
-                                            }
-                                            }
+}

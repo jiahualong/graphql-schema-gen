@@ -1,4 +1,4 @@
-package com.seaboxdata.drd2.vo.duty;
+package vo.${clz.clzName?uncap_first};
 
 import com.seaboxdata.drd2.vo.res.ResVO;
 import lombok.AllArgsConstructor;
@@ -9,29 +9,26 @@ import lombok.experimental.Accessors;
 
 import java.util.List;
 
-/** 职责 */
+/**
+ * ${clz.clzName} GraphQL VO实现
+ *
+ * @program: ${program}
+ * @description:${clz.comment}
+ * @author: ${author}
+ * @create: ${create}
+ */
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(chain = true)
-public class DutyVO {
-/** 职责ID */
-private Long id;
-/** 租户id */
-private Long tenantId;
-/** 所属机构id */
-private Long orgId;
-/** 排序id */
-private Integer orderId;
-/** 职责名称 */
-private String name;
-/** 职责内容 */
-private String desc;
-/** 职责所包含的Res对象 */
-private List<ResVO> resList;
+public class ${clz.clzName}VO {
+  <#list proVOList as pro >
+    /** ${pro.comm} */
+    private ${pro.clzType} ${pro.clzProp};
+  </#list>
 
-    public static DutyVO empty() {
-    return DutyVO.builder().build();
+    public static ${clz.clzName}VO empty() {
+        return ${clz.clzName}VO.builder().build();
     }
-    }
+}

@@ -36,3 +36,5 @@ public class ${clz.clzName} {
         return Objects.nonNull(this.id) ? false : true;
     }
 }
+
+

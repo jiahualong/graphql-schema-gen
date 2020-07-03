@@ -33,7 +33,7 @@ public class ${clz.clzName}Ctl implements I${clz.clzName}Ctl {
     }
 
     /**
-     * 通过条件查询
+     * 通过条件查询 ${clz.comment}
      * @param input 查询条件
      * @return  查询结果
      */
@@ -43,7 +43,7 @@ public class ${clz.clzName}Ctl implements I${clz.clzName}Ctl {
     }
 
     /**
-     * 添加或更新
+     * 添加或更新 ${clz.comment}
      * @param input 要添加或更新的实体
      * @return 添加或更新后的实体
      */
@@ -53,7 +53,7 @@ public class ${clz.clzName}Ctl implements I${clz.clzName}Ctl {
     }
 
     /**
-     * 批量删除
+     * 批量删除 ${clz.comment}
      * @param IdList  要删除的Id
      * @return  删除成功的Id
      */
