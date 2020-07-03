@@ -60,5 +60,11 @@ public class Prop {
             graphqlType = "LocalDateTime";
             return;
         }
+
+        if (dbType.indexOf("double") >= 0) {
+            clzType = "Double";
+            graphqlType = "float";
+            return;
+        }
     }
 }
