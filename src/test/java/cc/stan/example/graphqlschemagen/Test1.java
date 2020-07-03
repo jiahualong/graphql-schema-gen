@@ -109,6 +109,7 @@ public class Test1 {
                 new FtlAndJava("DAO.ftl", "%sDAO.java"),
                 new FtlAndJava("DTO.ftl", "%sDTO.java"),
                 new FtlAndJava("FindListOutput.ftl", "Find%sListOutput.java"),
+                new FtlAndJava("FindListInput.ftl", "Find%sListInput.java"),
                 new FtlAndJava("Ictl.ftl", "I%sCtl.java"),
                 new FtlAndJava("Input.ftl", "%sInput.java"),
                 new FtlAndJava("IService.ftl", "I%sService.java"),

@@ -2,15 +2,7 @@ package resolver;
 
 import com.coxautodev.graphql.tools.GraphQLResolver;
 import com.seaboxdata.drd2.api.controller.I${clz.clzName}Ctl;
-import com.seaboxdata.drd2.api.dto.${clz.clzName?uncap_first}.${clz.clzName}AccordLawDTO;
-import com.seaboxdata.drd2.api.dto.${clz.clzName?uncap_first}.${clz.clzName}DeclaredFileDTO;
-import com.seaboxdata.drd2.api.dto.${clz.clzName?uncap_first}.${clz.clzName}FaqDTO;
-import com.seaboxdata.drd2.api.dto.${clz.clzName?uncap_first}.${clz.clzName}ProcessFlowDTO;
 import com.seaboxdata.drd2.vo.${clz.clzName?uncap_first}.*;
-import com.seaboxdata.drd2.vo.${clz.clzName?uncap_first}.mapstruct.${clz.clzName}AccordLawVOMapStruct;
-import com.seaboxdata.drd2.vo.${clz.clzName?uncap_first}.mapstruct.${clz.clzName}DeclaredFileVOMapStruct;
-import com.seaboxdata.drd2.vo.${clz.clzName?uncap_first}.mapstruct.${clz.clzName}FaqVOMapStruct;
-import com.seaboxdata.drd2.vo.${clz.clzName?uncap_first}.mapstruct.${clz.clzName}ProcessFlowVOMapStruct;
 import com.seaboxdata.drd2.vo.info.CollectInfoVO;
 import com.seaboxdata.drd2.vo.info.ScoreInfoVO;
 import com.seaboxdata.drd2.vo.res.ResVO;

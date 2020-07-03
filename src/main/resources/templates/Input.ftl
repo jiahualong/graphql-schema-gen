@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
+import java.time.LocalDateTime;
+
 /**
  * ${clz.clzName} Input输入实体
  *
@@ -19,7 +21,7 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(chain = true)
-public class BizInput {
+public class ${clz.clzName}Input {
 <#list propInputList as pro >
     /** ${pro.comm} */
     private ${pro.clzType} ${pro.clzProp};

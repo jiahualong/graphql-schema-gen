@@ -37,6 +37,14 @@ public interface I${clz.clzName}Ctl {
     PaginationResult<${clz.clzName}DTO> find${clz.clzName}List(@RequestBody Find${clz.clzName}ListInput input);
 
     /**
+     * 通过Id查询 ${clz.comment}
+     * @param ${clz.clzName?uncap_first}Id 编号
+     * @return 查询结果
+     */
+    @PostMapping("/${clz.clzName?uncap_first}Ctl/find${clz.clzName}ById")
+    BizDTO findBizById(@RequestParam("${clz.clzName?uncap_first}Id") Long ${clz.clzName?uncap_first}Id);
+
+    /**
      * 添加或更新 ${clz.comment}
      * @param input 要添加或更新的实体
      * @return 添加或更新后的实体
@@ -46,7 +54,7 @@ public interface I${clz.clzName}Ctl {
 
     /**
      * 批量删除 ${clz.comment}
-     * @param IdList  要删除的Id
+     * @param ${clz.clzName?uncap_first}IdList  要删除的Id
      * @return  删除成功的Id
      */
     @DeleteMapping("/${clz.clzName?uncap_first}ctl/del${clz.clzName}ByIdList")

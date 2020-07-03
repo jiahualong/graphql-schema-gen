@@ -3,10 +3,7 @@ package ctl;
 import com.seaboxdata.drd2.api.controller.I${clz.clzName}Ctl;
 import com.seaboxdata.drd2.api.dto.${clz.clzName}.${clz.clzName}DTO;
 import com.seaboxdata.drd2.api.dto.page.PaginationResult;
-import com.seaboxdata.drd2.api.input.${clz.clzName}.${clz.clzName}Input;
-import com.seaboxdata.drd2.api.input.${clz.clzName}.Find${clz.clzName}ListInput;
-import com.seaboxdata.drd2.${clz.clzName}.service.I${clz.clzName}Service;
-import com.seaboxdata.drd2.${clz.clzName}.service.IUserService;
+import com.seaboxdata.drd2.user.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -40,6 +37,16 @@ public class ${clz.clzName}Ctl implements I${clz.clzName}Ctl {
     @Override
     public PaginationResult<${clz.clzName}DTO> find${clz.clzName}List(Find${clz.clzName}ListInput input) {
         return ${clz.clzName?uncap_first}Service.find${clz.clzName}List(input, userService.getUser());
+    }
+
+    /**
+     * 通过Id查询 ${clz.comment}
+     * @param ${clz.clzName?uncap_first}Id 编号
+     * @return 查询结果
+     */
+    @PostMapping("/${clz.clzName?uncap_first}Ctl/find${clz.clzName}ById")
+    BizDTO findBizById(@RequestParam("${clz.clzName?uncap_first}Id") Long ${clz.clzName?uncap_first}Id) {
+        return ${clz.clzName?uncap_first}Service.find${clz.clzName}ById(${clz.clzName?uncap_first}IdList, userService.getUser());
     }
 
     /**

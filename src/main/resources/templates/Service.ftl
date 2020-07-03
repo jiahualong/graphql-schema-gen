@@ -91,7 +91,7 @@ public class ${clz.clzName}Service implements I${clz.clzName}Service {
 
     /**
      * 批量删除 ${clz.comment}
-     * @param IdList 要删除的Id列表
+     * @param ${clz.clzName?uncap_first}IdList 要删除的Id列表
      * @param user 用户
      * @return 成功删除的Id列表
      */

@@ -39,7 +39,11 @@ public class Prop {
             graphqlType = "ID";
             return;
         }
-
+        if (dbType.indexOf("tinyint") >= 0) {
+            clzType = "Boolean";
+            graphqlType = "Boolean";
+            return;
+        }
         if (dbType.indexOf("int") >= 0) {
             clzType = "Integer";
             graphqlType = "Int";
@@ -50,11 +54,7 @@ public class Prop {
             graphqlType = "String";
             return;
         }
-        if (dbType.indexOf("tinyint") >= 0) {
-            clzType = "Boolean";
-            graphqlType = "Boolean";
-            return;
-        }
+
         if (dbType.indexOf("datetime") >= 0) {
             clzType = "LocalDateTime";
             graphqlType = "LocalDateTime";

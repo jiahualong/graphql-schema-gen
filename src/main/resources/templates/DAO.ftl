@@ -27,7 +27,7 @@ public class ${clz.clzName}DAO {
 
     /**
     * 通过Id和租户Id搜索
-    * @param Id 编号
+    * @param ${clz.clzName?uncap_first}Id 编号
     * @param tenantId 租户编号
     */
     public ${clz.clzName} selectById(Long ${clz.clzName?uncap_first}Id, Long tenantId) {
