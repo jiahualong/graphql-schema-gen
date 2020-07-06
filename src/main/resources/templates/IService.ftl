@@ -20,6 +20,14 @@ public interface I${clz.clzName}Service {
 
     /**
      * 通过条件查询 ${clz.comment}
+     * @param ${clz.clzName?uncap_first}Id 编号
+     * @param user 用户
+     * @return 查询结果
+     */
+    ${clz.clzName}DTO find${clz.clzName}ById(Long ${clz.clzName?uncap_first}Id, User user);
+
+    /**
+     * 通过条件查询 ${clz.comment}
      * @param input 条件
      * @param user 用户
      * @return 查询结果

@@ -30,7 +30,7 @@ public class ${clz.clzName}DAO {
     * @param ${clz.clzName?uncap_first}Id 编号
     * @param tenantId 租户编号
     */
-    public ${clz.clzName} selectById(Long ${clz.clzName?uncap_first}Id, Long tenantId) {
+    public ${clz.clzName} findByIdAndTenantId(Long ${clz.clzName?uncap_first}Id, Long tenantId) {
     ${clz.clzName} ${clz.clzName?uncap_first} =
         ${clz.clzName?uncap_first}Mapper.selectOne(new LambdaQueryWrapper<${clz.clzName}>()
                 .eq(${clz.clzName}::getTenantId, tenantId)
@@ -47,7 +47,7 @@ public class ${clz.clzName}DAO {
      * @param userId 用户编号
      */
     public ${clz.clzName} update${clz.clzName}(${clz.clzName} ${clz.clzName?uncap_first}, LocalDateTime now, Long tenantId, Long userId) {
-    ${clz.clzName} origin = selectById(${clz.clzName?uncap_first}.getId(), tenantId);
+    ${clz.clzName} origin = findByIdAndTenantId(${clz.clzName?uncap_first}.getId(), tenantId);
         if (Objects.isNull(origin)) {
             return create${clz.clzName}(${clz.clzName?uncap_first}, now, tenantId, userId);
         }
