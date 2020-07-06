@@ -42,7 +42,7 @@ public interface I${clz.clzName}Ctl {
      * @return 查询结果
      */
     @PostMapping("/${clz.clzName?uncap_first}Ctl/find${clz.clzName}ById")
-    BizDTO find${clz.clzName}ById(@RequestParam("${clz.clzName?uncap_first}Id") Long ${clz.clzName?uncap_first}Id);
+    ${clz.clzName}DTO find${clz.clzName}ById(@RequestParam("${clz.clzName?uncap_first}Id") Long ${clz.clzName?uncap_first}Id);
 
     /**
      * 添加或更新 ${clz.comment}

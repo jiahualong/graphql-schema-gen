@@ -45,7 +45,7 @@ public class ${clz.clzName}Ctl implements I${clz.clzName}Ctl {
      * @return 查询结果
      */
     @PostMapping("/${clz.clzName?uncap_first}Ctl/find${clz.clzName}ById")
-    BizDTO find${clz.clzName}ById(@RequestParam("${clz.clzName?uncap_first}Id") Long ${clz.clzName?uncap_first}Id) {
+    public ${clz.clzName}DTO find${clz.clzName}ById(@RequestParam("${clz.clzName?uncap_first}Id") Long ${clz.clzName?uncap_first}Id) {
         return ${clz.clzName?uncap_first}Service.find${clz.clzName}ById(${clz.clzName?uncap_first}IdList, userService.getUser());
     }
 

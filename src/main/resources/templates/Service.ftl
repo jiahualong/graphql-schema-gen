@@ -45,13 +45,13 @@ public class ${clz.clzName}Service implements I${clz.clzName}Service {
 
     /**
      * 通过条件查询 ${clz.comment}
-     * @param ${clz.clzName?uncap_first}resId 条件
+     * @param ${clz.clzName?uncap_first}Id 条件
      * @param user 用户
      * @return 查询结果
      */
     @Override
     public ${clz.clzName}DTO find${clz.clzName}ById(Long ${clz.clzName?uncap_first}Id, User user) {
-        ${clz.clzName?uncap_first}Res ${clz.clzName?uncap_first}res = ${clz.clzName?uncap_first}resDAO.findByIdAndTenantId(${clz.clzName?uncap_first}resId, user.getTenantId());
+        ${clz.clzName} ${clz.clzName?uncap_first} = ${clz.clzName?uncap_first}DAO.findByIdAndTenantId(${clz.clzName?uncap_first}Id, user.getTenantId());
         notNull(${clz.clzName?uncap_first}, String.format("未找到${clz.clzName},${clz.clzName?uncap_first}Id,{},tenantId,{}", ${clz.clzName?uncap_first}Id, user.getTenantId()));
         return ${clz.clzName}MapStruct.INSTANCE.toDTO(${clz.clzName?uncap_first});
     }

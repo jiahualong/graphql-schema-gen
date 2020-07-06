@@ -8,6 +8,9 @@
 extend type Query{
     # 查询 ${clz.comment}
     find${clz.clzName}List(input: Find${clz.clzName}ListInput!): Find${clz.clzName}ListOutput!
+
+    # 通过${clz.comment}ID查询
+    find${clz.clzName}ById(id: ID!): ${clz.clzName}
 }
 
 extend type Mutation{
@@ -31,7 +34,7 @@ type ${clz.clzName} {
 
 # -----------------input--------------------------
 
-# 职责 Input
+# ${clz.clzName} Input
 input  ${clz.clzName}Input {
 <#list propInputList as pro >
     # ${pro.comm}
