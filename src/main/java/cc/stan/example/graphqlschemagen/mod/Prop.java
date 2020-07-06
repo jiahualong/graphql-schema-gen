@@ -63,7 +63,7 @@ public class Prop {
 
         if (dbType.indexOf("double") >= 0) {
             clzType = "Double";
-            graphqlType = "float";
+            graphqlType = "Float";
             return;
         }
     }
