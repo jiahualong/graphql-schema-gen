@@ -14,11 +14,24 @@ import org.mapstruct.factory.Mappers;
  * @author: ${author}
  * @create: ${create}
  */
-@Mapper
+@Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface ${clz.clzName}MapStruct {
+
     ${clz.clzName}MapStruct INSTANCE = Mappers.getMapper(${clz.clzName}MapStruct.class);
 
+    /**
+     * Model -> DTO
+     *
+     * @param from Model
+     * @return DTO
+     */
     ${clz.clzName}DTO toDTO(${clz.clzName} from);
 
+    /**
+     * Input -> Model
+     *
+     * @param input Input
+     * @return Model
+     */
     ${clz.clzName} fromInput(${clz.clzName}Input input);
 }

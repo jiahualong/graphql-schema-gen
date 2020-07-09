@@ -12,9 +12,16 @@ import org.mapstruct.factory.Mappers;
  * @author: ${author}
  * @create: ${create}
  */
-@Mapper
+@Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface ${clz.clzName}VOMapStruct {
+
     ${clz.clzName}VOMapStruct INSTANCE = Mappers.getMapper(${clz.clzName}VOMapStruct.class);
 
+    /**
+     * DTO -> VO
+     *
+     * @param dto DTO
+     * @return VO
+     */
     ${clz.clzName}VO fromDTO(${clz.clzName}DTO dto);
 }
