@@ -32,7 +32,7 @@ public class ${clz.clzName}Ctl implements I${clz.clzName}Ctl {
     /**
      * 通过条件查询 ${clz.comment}
      * @param input 查询条件
-     * @return  查询结果
+     * @return 查询结果
      */
     @Override
     public PaginationResult<${clz.clzName}DTO> find${clz.clzName}List(Find${clz.clzName}ListInput input) {
@@ -46,7 +46,7 @@ public class ${clz.clzName}Ctl implements I${clz.clzName}Ctl {
      */
     @PostMapping("/${clz.clzName?uncap_first}Ctl/find${clz.clzName}ById")
     public ${clz.clzName}DTO find${clz.clzName}ById(@RequestParam("${clz.clzName?uncap_first}Id") Long ${clz.clzName?uncap_first}Id) {
-        return ${clz.clzName?uncap_first}Service.find${clz.clzName}ById(${clz.clzName?uncap_first}IdList, userService.getUser());
+        return ${clz.clzName?uncap_first}Service.find${clz.clzName}ById(${clz.clzName?uncap_first}Id, userService.getUser());
     }
 
     /**
@@ -61,8 +61,8 @@ public class ${clz.clzName}Ctl implements I${clz.clzName}Ctl {
 
     /**
      * 批量删除 ${clz.comment}
-     * @param IdList  要删除的Id
-     * @return  删除成功的Id
+     * @param  ${clz.clzName?uncap_first}IdList 要删除的Id
+     * @return 删除成功的Id
      */
     @Override
     public List<Long> del${clz.clzName}ByIdList(List<Long> ${clz.clzName?uncap_first}IdList) {

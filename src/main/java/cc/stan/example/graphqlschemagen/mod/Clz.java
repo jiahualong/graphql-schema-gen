@@ -44,7 +44,7 @@ public class Clz {
                 return true;
             }
         }).collect(toList());
-        propInputList = propList.stream().filter(p -> {
+        propInputList = propVOList.stream().filter(p -> {
             if (p.getClzProp().indexOf("tenantId") >= 0) {
                 return false;
             } else {

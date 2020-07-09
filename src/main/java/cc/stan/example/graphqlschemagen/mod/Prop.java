@@ -49,7 +49,7 @@ public class Prop {
             graphqlType = "Int";
             return;
         }
-        if (dbType.indexOf("varchar") >= 0) {
+        if (dbType.indexOf("varchar") >= 0 || dbType.indexOf("text") >= 0) {
             clzType = "String";
             graphqlType = "String";
             return;
