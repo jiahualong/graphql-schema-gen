@@ -1,10 +1,7 @@
 package api.controller;
 
 import com.seaboxdata.drd2.api.config.FeignClientConfig;
-import com.seaboxdata.drd2.api.dto.${clz.clzName?uncap_first}.${clz.clzName}DTO;
 import com.seaboxdata.drd2.api.dto.page.PaginationResult;
-import com.seaboxdata.drd2.api.input.${clz.clzName?uncap_first}.${clz.clzName}Input;
-import com.seaboxdata.drd2.api.input.${clz.clzName?uncap_first}.Find${clz.clzName}ListInput;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.cloud.openfeign.FeignClientsConfiguration;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -33,7 +30,7 @@ public interface I${clz.clzName}Ctl {
      * @param input 查询条件
      * @return  查询结果
      */
-    @PostMapping("/${clz.clzName?uncap_first}ctl/find${clz.clzName}List")
+    @PostMapping("/api/${clz.clzName?uncap_first}ctl/find${clz.clzName}List")
     PaginationResult<${clz.clzName}DTO> find${clz.clzName}List(@RequestBody Find${clz.clzName}ListInput input);
 
     /**
@@ -41,7 +38,7 @@ public interface I${clz.clzName}Ctl {
      * @param ${clz.clzName?uncap_first}Id 编号
      * @return 查询结果
      */
-    @PostMapping("/${clz.clzName?uncap_first}Ctl/find${clz.clzName}ById")
+    @PostMapping("/api/${clz.clzName?uncap_first}Ctl/find${clz.clzName}ById")
     ${clz.clzName}DTO find${clz.clzName}ById(@RequestParam("${clz.clzName?uncap_first}Id") Long ${clz.clzName?uncap_first}Id);
 
     /**
@@ -49,7 +46,7 @@ public interface I${clz.clzName}Ctl {
      * @param input 要添加或更新的实体
      * @return 添加或更新后的实体
      */
-    @PostMapping("/${clz.clzName?uncap_first}ctl/addUpdate${clz.clzName}")
+    @PostMapping("/api/${clz.clzName?uncap_first}ctl/addUpdate${clz.clzName}")
     ${clz.clzName}DTO addUpdate${clz.clzName}(@RequestBody ${clz.clzName}Input input);
 
     /**
@@ -57,7 +54,7 @@ public interface I${clz.clzName}Ctl {
      * @param ${clz.clzName?uncap_first}IdList  要删除的Id
      * @return  删除成功的Id
      */
-    @DeleteMapping("/${clz.clzName?uncap_first}ctl/del${clz.clzName}ByIdList")
+    @DeleteMapping("/api/${clz.clzName?uncap_first}ctl/del${clz.clzName}ByIdList")
     List<Long> del${clz.clzName}ByIdList(@RequestParam("${clz.clzName?uncap_first}IdList") List<Long> ${clz.clzName?uncap_first}IdList);
 
 }

@@ -30,32 +30,19 @@ public class Test1 {
         String author = "jhl";
         String create = LocalDate.now().format(DateTimeFormatter.ISO_DATE);
 
-//        List<String> sql = Arrays.asList(
-//                "select_item    ,全局下拉框选项",
-//                "id             ,bigint             ,id ",
-//                "tenant_id      ,bigint             ,租户id",
-//                "type           ,varchar(200)       ,下拉框条目类型",
-//                "name           ,varchar(200)       ,选项名",
-//                "`desc`         ,varchar(200)       ,选项描述",
-//                "creator        ,bigint             ,创建人",
-//                "modifier       ,bigint             ,修改人",
-//                "create_tm      ,datetime           ,创建时间",
-//                "modify_tm      ,datetime           ,修改时间",
-//                "is_del         ,tinyint default 0  ,逻辑删除"
-//        );
-
         List<String> sql = Arrays.asList(
-                "sys_select_item    ,系统下拉框选项",
-                "id                 ,bigint              ,id ",
-                "tenant_id          ,bigint              ,租户id",
-                "en_name            ,varchar(200)        ,英文名",
-                "ch_name            ,varchar(200)        ,中文名",
-                "value              ,text                ,下拉框的值_以逗号分隔",
-                "creator            ,bigint              ,创建人",
-                "modifier           ,bigint              ,修改人",
-                "create_tm          ,datetime            ,创建时间",
-                "modify_tm          ,datetime            ,修改时间",
-                "is_del             ,tinyint             ,逻辑删除"
+                "sys_custom_field    ,系统自定义字段选项",
+                "id                  ,bigint             ,id",
+                "tenant_id           ,bigint             ,租户id",
+                "en_name             ,varchar(200)       ,英文名",
+                "ch_name             ,varchar(200)       ,中文名",
+                "type                ,varchar(200)       ,字段类型",
+                "value               ,text               ,下拉框的值_以逗号分割",
+                "creator             ,bigint             ,创建人",
+                "modifier            ,bigint             ,修改人",
+                "create_tm           ,datetime           ,创建时间",
+                "modify_tm           ,datetime           ,修改时间",
+                "is_del              ,tinyint default 0  ,逻辑删除"
         );
         Clz clz = fromSql(sql);
 
