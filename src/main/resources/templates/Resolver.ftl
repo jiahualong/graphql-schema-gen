@@ -2,13 +2,7 @@ package resolver;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
-import com.seaboxdata.drd2.api.controller.I${clz.clzName}Ctl;
-import com.seaboxdata.drd2.api.dto.${clz.clzName?uncap_first}.*;
 import com.seaboxdata.drd2.api.dto.page.PaginationResult;
-import com.seaboxdata.drd2.api.input.${clz.clzName?uncap_first}.*;
-import com.seaboxdata.drd2.vo.${clz.clzName?uncap_first}.*;
-import com.seaboxdata.drd2.vo.${clz.clzName?uncap_first}.mapstruct.*;
-import com.seaboxdata.drd2.vo.${clz.clzName?uncap_first}.output.Find${clz.clzName}ListOutput;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

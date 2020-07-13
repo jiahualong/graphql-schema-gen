@@ -1,8 +1,6 @@
 package resolver;
 
 import com.coxautodev.graphql.tools.GraphQLResolver;
-import com.seaboxdata.drd2.api.controller.I${clz.clzName}Ctl;
-import com.seaboxdata.drd2.vo.${clz.clzName?uncap_first}.*;
 import com.seaboxdata.drd2.vo.info.CollectInfoVO;
 import com.seaboxdata.drd2.vo.info.ScoreInfoVO;
 import com.seaboxdata.drd2.vo.res.ResVO;

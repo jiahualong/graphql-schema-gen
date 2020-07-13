@@ -1,7 +1,5 @@
 package ctl;
 
-import com.seaboxdata.drd2.api.controller.I${clz.clzName}Ctl;
-import com.seaboxdata.drd2.api.dto.${clz.clzName}.${clz.clzName}DTO;
 import com.seaboxdata.drd2.api.dto.page.PaginationResult;
 import com.seaboxdata.drd2.user.service.IUserService;
 import lombok.extern.slf4j.Slf4j;

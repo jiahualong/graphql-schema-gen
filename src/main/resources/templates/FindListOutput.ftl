@@ -1,9 +1,6 @@
 package vo.output;
 
-import com.seaboxdata.drd2.api.dto.${clz.clzName?uncap_first}.${clz.clzName}DTO;
 import com.seaboxdata.drd2.api.dto.page.PaginationResult;
-import com.seaboxdata.drd2.vo.${clz.clzName?uncap_first}.${clz.clzName}VO;
-import com.seaboxdata.drd2.vo.${clz.clzName?uncap_first}.${clz.clzName}VOMapStruct;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

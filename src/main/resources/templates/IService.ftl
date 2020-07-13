@@ -1,9 +1,6 @@
 package service;
 
-import com.seaboxdata.drd2.api.dto.${clz.clzName?uncap_first}.${clz.clzName}DTO;
 import com.seaboxdata.drd2.api.dto.page.PaginationResult;
-import com.seaboxdata.drd2.api.input.${clz.clzName?uncap_first}.${clz.clzName}Input;
-import com.seaboxdata.drd2.api.input.${clz.clzName?uncap_first}.Find${clz.clzName}ListInput;
 import com.seaboxdata.drd2.user.model.User;
 
 import java.util.List;

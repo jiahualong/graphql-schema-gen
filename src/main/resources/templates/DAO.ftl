@@ -1,8 +1,6 @@
 package dao;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.seaboxdata.drd2.${clz.clzName?uncap_first}.dao.mapper.${clz.clzName}Mapper;
-import com.seaboxdata.drd2.${clz.clzName?uncap_first}.model.${clz.clzName};
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;

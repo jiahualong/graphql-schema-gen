@@ -1,7 +1,6 @@
 package dao.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.seaboxdata.drd2.${clz.clzName?uncap_first}.model.${clz.clzName};
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

@@ -1,6 +1,5 @@
 package vo.mapstruct;
 
-import com.seaboxdata.drd2.api.dto.${clz.clzName?uncap_first}.${clz.clzName}DTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
