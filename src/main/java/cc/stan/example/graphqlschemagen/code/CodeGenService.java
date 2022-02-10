@@ -32,23 +32,19 @@ public class CodeGenService implements ICodeGenService {
         List<String> sql = codeInfo.getPropList();
         Clz clz = fromSql(sql);
         List<FtlAndJava> ftlAndJavaList = Arrays.asList(
-                new FtlAndJava("Model.ftl" , "%s.java"),
-                new FtlAndJava("Ctl.ftl" , "%sCtl.java"),
-                new FtlAndJava("DAO.ftl" , "%sDAO.java"),
+                new FtlAndJava("convert.ftl" , "%sConvert.java"),
                 new FtlAndJava("DTO.ftl" , "%sDTO.java"),
-                new FtlAndJava("FindListOutput.ftl" , "Find%sListOutput.java"),
-                new FtlAndJava("FindListInput.ftl" , "Find%sListInput.java"),
-                new FtlAndJava("Ictl.ftl" , "I%sCtl.java"),
-                new FtlAndJava("Input.ftl" , "%sInput.java"),
+                new FtlAndJava("graphqls.ftl" , "%s.graphqls"),
+                new FtlAndJava("IDAO.ftl" , "I%sDAO.java"),
+                new FtlAndJava("IDAOImpl.ftl" , "%sDAOImpl.java"),
                 new FtlAndJava("IService.ftl" , "I%sService.java"),
                 new FtlAndJava("Mapper.ftl" , "%sMapper.java"),
-                new FtlAndJava("MapStruct.ftl" , "%sMapStruct.java"),
-                new FtlAndJava("PropertyResolver.ftl" , "%sPropertyResolver.java"),
+                new FtlAndJava("model.ftl" , "%s.java"),
+                new FtlAndJava("PageInput.ftl" , "Page%sInput.java"),
                 new FtlAndJava("Resolver.ftl" , "%sResolver.java"),
-                new FtlAndJava("Service.ftl" , "%sService.java"),
-                new FtlAndJava("VO.ftl" , "%sVO.java"),
-                new FtlAndJava("VOMapStruct.ftl" , "%sVOMapStruct.java"),
-                new FtlAndJava("graphqls.ftl" , "%s.graphqls")
+                new FtlAndJava("SaveInput.ftl" , "Save%sInput.java"),
+                new FtlAndJava("Service.ftl" , "%sServiceImpl.java"),
+                new FtlAndJava("VO.ftl" , "%sVO.java")
         );
 
         ftlAndJavaList.stream().forEach(fj -> {

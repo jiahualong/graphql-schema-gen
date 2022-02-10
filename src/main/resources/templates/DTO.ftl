@@ -9,12 +9,9 @@ import lombok.experimental.Accessors;
 import java.time.LocalDateTime;
 
 /**
- * ${clz.clzName} DTO对象
- *
- * @program: ${program}
- * @description:${clz.comment}
- * @author: ${author}
- * @create: ${create}
+ * @Desc ${clz.clzName} DTO对象
+ * @Author ${author}
+ * @Date ${create}
  */
 @Data
 @Builder

@@ -39,9 +39,14 @@ public class Prop {
             graphqlType = "ID";
             return;
         }
-        if (dbType.indexOf("tinyint") >= 0) {
+        if (dbType.indexOf("tinyint") >= 0 || dbType.indexOf("boolean") >= 0) {
             clzType = "Boolean";
             graphqlType = "Boolean";
+            return;
+        }
+        if (dbType.indexOf("int8") >= 0) {
+            clzType = "Long";
+            graphqlType = "ID";
             return;
         }
         if (dbType.indexOf("int") >= 0) {
@@ -55,7 +60,7 @@ public class Prop {
             return;
         }
 
-        if (dbType.indexOf("datetime") >= 0) {
+        if (dbType.indexOf("datetime") >= 0 || dbType.indexOf("timestamp") >= 0) {
             clzType = "LocalDateTime";
             graphqlType = "LocalDateTime";
             return;

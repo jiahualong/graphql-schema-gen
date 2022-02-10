@@ -1,6 +1,5 @@
-package vo.${clz.clzName?uncap_first};
+package vo;
 
-import com.seaboxdata.drd2.vo.res.ResVO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,12 +9,9 @@ import lombok.experimental.Accessors;
 import java.util.List;
 
 /**
- * ${clz.clzName} GraphQL VO实现
- *
- * @program: ${program}
- * @description:${clz.comment}
- * @author: ${author}
- * @create: ${create}
+ * @Desc ${clz.clzName} GraphQL VO实现
+ * @Author ${author}
+ * @Date ${create}
  */
 @Data
 @Builder
@@ -27,7 +23,7 @@ public class ${clz.clzName}VO {
     /** ${pro.comm} */
     private ${pro.clzType} ${pro.clzProp};
   </#list>
-
+    /** 生成一个空的实体 */
     public static ${clz.clzName}VO empty() {
         return ${clz.clzName}VO.builder().build();
     }

@@ -12,13 +12,10 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 /**
- * ${clz.clzName} 实体
- *
- * @program: ${program}
- * @description:${clz.comment}
- * @author: ${author}
- * @create: ${create}
-*/
+ * @Desc ${clz.comment}实体
+ * @Author ${author}
+ * @Date ${create}
+ */
 @TableName("${clz.tblName}")
 @Data
 @Builder
@@ -27,11 +24,14 @@ import java.util.Objects;
 @Accessors(chain = true)
 public class ${clz.clzName} {
 
+@TableId(type = IdType.INPUT)
+@TableLogic(value = "0", delval = "1")
 <#list proList as pro >
     /** ${pro.comm} */
     private ${pro.clzType} ${pro.clzProp};
 </#list>
 
+    /** id是否为空 */
     public boolean isNew() {
         return Objects.nonNull(this.id) ? false : true;
     }

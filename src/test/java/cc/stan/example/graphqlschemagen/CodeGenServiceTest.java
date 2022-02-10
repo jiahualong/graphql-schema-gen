@@ -18,21 +18,23 @@ public class CodeGenServiceTest {
     public void genCode() {
 
         codeGenService.genCodes(CodeInfo.builder()
-                .program("DRD2-SERVER")
-                .author("magic.hualong@gmail.com")
+                .program("HAIDA-SERVER")
+                .author("hualong.jia")
                 .propList(Arrays.asList(
-                        "sys_display_item       ,系统显示模块配置" ,
-                        "id                     ,bigint                 ,id" ,
-                        "tenant_id              ,bigint                 ,租户id" ,
-                        "en_name                ,varchar(200)           ,英文名(与前端协商)" ,
-                        "ch_name                ,varchar(200)           ,中文名" ,
-                        "status                 ,tinyint(1)             ,显示状态" ,
-                        "creator                ,bigint                 ,创建人" ,
-                        "modifier               ,bigint                 ,修改人" ,
-                        "create_tm              ,datetime               ,创建时间" ,
-                        "modify_tm              ,datetime               ,修改时间" ,
-                        "is_del                 ,tinyint                ,逻辑删除"
-
+                        
+                        //---
+//                        "dev_app_require_category,开发时应用需求分类表",
+//                        "category_id        ,int8      , 需求分类ID ",
+//                        "app_id             ,int8      , 应用ID     ",
+//                        "category_name      ,varchar   , 分类名称   ",
+//                        "sort               ,int4      , 排序       ",
+//                        "parent_category_id ,int8      , 上级分类ID ",
+//                        "tenant_id          ,int8      , 租户ID     ",
+//                        "creator            ,int8      , 创建人     ",
+//                        "modifier           ,int8      , 修改人     ",
+//                        "create_tm          ,timestamp , 创建时间   ",
+//                        "modify_tm          ,timestamp , 修改时间   ",
+//                        "if_delete          ,int4      , 是否删除"
                 )).build());
     }
 }

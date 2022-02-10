@@ -1,116 +1,152 @@
 package service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.seaboxdata.drd2.api.dto.page.PaginationResult;
-import com.seaboxdata.drd2.user.model.User;
+import com.seaboxdata.commons.id.IdGenerator;
+import com.seaboxdata.commons.query.PaginationResult;
 import lombok.extern.slf4j.Slf4j;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
+import org.springframework.util.CollectionUtils;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
+import static java.lang.Boolean.TRUE;
 import static java.util.stream.Collectors.toList;
+import static org.springframework.util.Assert.notNull;
 
 /**
- * ${clz.clzName} 服务实现
- *
- * @program: ${program}
- * @description:${clz.comment}
- * @author: ${author}
- * @create: ${create}
+ * @Desc ${clz.comment}}服务实现
+ * @Author ${author}
+ * @Date ${create}
  */
 @Slf4j
 @Service
-public class ${clz.clzName}Service implements I${clz.clzName}Service {
+public class ${clz.clzName}ServiceImpl implements I${clz.clzName}Service {
 
-    private ${clz.clzName}DAO ${clz.clzName?uncap_first}DAO;
-    private ${clz.clzName}Mapper ${clz.clzName?uncap_first}Mapper;
+    private final IdGenerator idGenerator;
+    private final IDevAppVerifyService devAppVerifyService;
+    private final I${clz.clzName}DAO ${clz.clzName?uncap_first}DAO;
 
-    public ${clz.clzName}Service(${clz.clzName}DAO ${clz.clzName?uncap_first}DAO, ${clz.clzName}Mapper ${clz.clzName?uncap_first}Mapper) {
+    public ${clz.clzName}Service(IdGenerator idGenerator,
+                                        IDevAppVerifyService devAppVerifyService,
+                                        I${clz.clzName}DAO ${clz.clzName?uncap_first}DAO) {
+        this.idGenerator = idGenerator;
+        this.devAppVerifyService = devAppVerifyService;
         this.${clz.clzName?uncap_first}DAO = ${clz.clzName?uncap_first}DAO;
-        this.${clz.clzName?uncap_first}Mapper = ${clz.clzName?uncap_first}Mapper;
     }
 
     /**
-     * 通过条件查询 ${clz.comment}
-     * @param ${clz.clzName?uncap_first}Id 条件
-     * @param user 用户
+     * 通过ID查询 ${clz.comment}记录
+     *
+     * @param id       ID
+     * @param appId    应用ID
+     * @param userId   用户信息
+     * @param tenantId 租户信息
      * @return 查询结果
      */
     @Override
-    public ${clz.clzName}DTO find${clz.clzName}ById(Long ${clz.clzName?uncap_first}Id, User user) {
-        ${clz.clzName} ${clz.clzName?uncap_first} = ${clz.clzName?uncap_first}DAO.findByIdAndTenantId(${clz.clzName?uncap_first}Id, user.getTenantId());
-        notNull(${clz.clzName?uncap_first}, String.format("未找到${clz.clzName},${clz.clzName?uncap_first}Id,{},tenantId,{}", ${clz.clzName?uncap_first}Id, user.getTenantId()));
-        return ${clz.clzName}MapStruct.INSTANCE.toDTO(${clz.clzName?uncap_first});
+    public ${clz.clzName}DTO get${clz.clzName}ById(@NotNull Long id, @NotNull Long appId, @NotNull Long userId, @NotNull Long tenantId) {
+        Assert.isTrue(devAppVerifyService.verifyAppId(appId, userId, tenantId), "您无权操纵该APP");
+        ${clz.clzName} ${clz.clzName?uncap_first} = ${clz.clzName?uncap_first}DAO.findByIdAndAppIdTenantId(id, appId, tenantId);
+        notNull(${clz.clzName?uncap_first}, String.format("未找到开发时应用需求分类表记录%s", id));
+        return ${clz.clzName}Convert.INSTANCE.toDTO(${clz.clzName?uncap_first});
     }
 
     /**
-     * 通过条件查询 ${clz.comment}
-     * @param input 条件
-     * @param user 用户
+     * list查询${clz.comment}记录
+     *
+     * @param appId    应用id
+     * @param userId   用户id
+     * @param tenantId 租户iD
      * @return 查询结果
      */
     @Override
-    public PaginationResult<${clz.clzName}DTO> find${clz.clzName}List(Find${clz.clzName}ListInput input, User user) {
-        input.trim();
-        LambdaQueryWrapper<${clz.clzName}> query = new LambdaQueryWrapper<${clz.clzName}>()
-                .eq(${clz.clzName}::getIsDel, false)
-                .eq(${clz.clzName}::getTenantId, user.getTenantId())
-                .eq(${clz.clzName}::getOrgId, input.getOrgId())
-                .orderByDesc(${clz.clzName}::getCreateTm);
-        IPage<${clz.clzName}> page = ${clz.clzName?uncap_first}Mapper.selectPage(new Page<>(input.getPageNum(), input.getSize()), query);
-        if (Objects.nonNull(page)) {
-            PaginationResult<${clz.clzName}DTO> result = new PaginationResult<>();
-            result
-                    .setTotal((int) page.getTotal())
-                    .setPageNum(input.getPageNum())
-                    .setLimit((int) page.getSize())
-                    .setData(page.getRecords().stream().map(${clz.clzName}MapStruct.INSTANCE::toDTO).collect(toList()));
-            return result;
+    public List<${clz.clzName}DTO> list${clz.clzName}(@NotNull Long appId, @NotNull Long userId, @NotNull Long tenantId) {
+        Assert.isTrue(devAppVerifyService.verifyAppId(appId, userId, tenantId), "您无权操纵该APP");
+        List<${clz.clzName}> modelList = ${clz.clzName?uncap_first}DAO.findListByAppIdTenantId(appId, tenantId);
+        return TRUE.equals(CollectionUtils.isEmpty(modelList))
+                ? Collections.emptyList()
+                : modelList.stream().map(${clz.clzName}Convert.INSTANCE::toDTO).collect(toList());
+    }
+
+    /**
+     * page分页查询${clz.comment}记录
+     *
+     * @param input    搜索条件
+     * @param userId   用户id
+     * @param tenantId 租户Id
+     * @return 搜索结果
+     */
+    @Override
+    public PaginationResult<${clz.clzName}DTO> page${clz.clzName}(@NotNull Page${clz.clzName}Input input,
+                                                                                @NotNull Long userId, @NotNull Long tenantId) {
+        Assert.isTrue(devAppVerifyService.verifyAppId(input.getAppId(), userId, tenantId), "您无权操纵该APP");
+        PaginationResult<${clz.clzName}DTO> result = ${clz.clzName?uncap_first}DAO.page${clz.clzName}(input, userId, tenantId);
+        return result;
+    }
+
+    /**
+     * 更新或添加 ${clz.comment}记录
+     *
+     * @param dto      即将操作的DTO实体
+     * @param userId   用户
+     * @param tenantId 租户ID
+     * @return 处理后的对象
+     */
+    @Override
+    public ${clz.clzName}DTO save(@NotNull ${clz.clzName}DTO dto, @NotNull Long userId, @NotNull Long tenantId) {
+        ${clz.clzName} model = ${clz.clzName}Convert.INSTANCE.fromDTOToModel(dto);
+
+        Boolean isNew = model.isNew();
+        LocalDateTime now = LocalDateTime.now();
+        Assert.isTrue(devAppVerifyService.verifyAppId(dto.getAppId(), userId, tenantId), "您无权操纵该APP");
+
+        if (TRUE.equals(isNew)) {
+            model.setCategoryId(idGenerator.getId());
+            model.setTenantId(tenantId);
+            model.setCreator(userId);
+            model.setCreateTm(now);
         } else {
-            return new PaginationResult<>(0, input.getPageNum(), input.getSize(), Collections.emptyList());
+            ${clz.clzName} category = ${clz.clzName?uncap_first}DAO.findByIdAndAppIdTenantId(model.getCategoryId(), model.getAppId(), tenantId);
+            notNull(category, "未找到需要更新的类目");
+            category.setCategoryName(model.getCategoryName());
+            category.setSort(Objects.isNull(model.getSort()) ? category.getSort() : model.getSort());
+            category.setParentCategoryId(Objects.isNull(model.getParentCategoryId()) ?
+                    category.getParentCategoryId() :
+                    model.getParentCategoryId());
+            model = category;
         }
+        model.setModifier(userId);
+        model.setModifyTm(now);
+        ${clz.clzName?uncap_first}DAO.saveOrUpdate(model);
+
+        return ${clz.clzName}Convert.INSTANCE.toDTO(model);
     }
 
     /**
-     * 添加或更新 ${clz.comment}
-     * @param input 要添加或更新的对象
-     * @param user 用户
-     * @return 添加或更新后的对象
+     * 通过编号批量删除${clz.comment}记录
+     *
+     * @param ${clz.clzName?uncap_first}IdList id列表
+     * @param appId                       应用id
+     * @param userId                      当前用户
+     * @param tenantId                    当前租户
+     * @return 删除的Id列表
      */
     @Override
-    public ${clz.clzName}DTO addUpdate${clz.clzName}(${clz.clzName}Input input, User user) {
-    ${clz.clzName} ${clz.clzName?uncap_first} =${clz.clzName}MapStruct.INSTANCE.fromInput(input);
-        if (${clz.clzName?uncap_first}.isNew()){
-        ${clz.clzName?uncap_first} =
-            ${clz.clzName?uncap_first}DAO.create${clz.clzName}(${clz.clzName?uncap_first}, LocalDateTime.now(), user.getTenantId(), user.getId());
-        } else{
-            ${clz.clzName?uncap_first}DAO.update${clz.clzName}(${clz.clzName?uncap_first}, LocalDateTime.now(), user.getTenantId(), user.getId());
+    public List<Long> delete${clz.clzName}ByIds(@NotNull List<Long> ${clz.clzName?uncap_first}IdList,
+                                                       @NotNull Long appId, @NotNull Long userId, @NotNull Long tenantId) {
+        Assert.isTrue(devAppVerifyService.verifyAppId(appId, userId, tenantId), "您无权操纵该APP");
+        List<${clz.clzName}> exist${clz.clzName}List = ${clz.clzName?uncap_first}DAO
+                .findInIdsByAppIdTenantId(${clz.clzName?uncap_first}IdList, appId, tenantId);
+        List<Long> delete${clz.clzName}IdList = exist${clz.clzName}List.stream()
+                .map(${clz.clzName}::getCategoryId).distinct().collect(toList());
+        if (TRUE.equals(CollectionUtils.isEmpty(delete${clz.clzName}IdList))) {
+            return Collections.emptyList();
         }
-        return ${clz.clzName}MapStruct.INSTANCE.toDTO(${clz.clzName?uncap_first});
-    }
-
-    /**
-     * 批量删除 ${clz.comment}
-     * @param ${clz.clzName?uncap_first}IdList 要删除的Id列表
-     * @param user 用户
-     * @return 成功删除的Id列表
-     */
-    @Override
-    public List<Long> del${clz.clzName}ByIdList(List<Long> ${clz.clzName?uncap_first}IdList, User user) {
-        List<${clz.clzName}> exist${clz.clzName}List = ${clz.clzName?uncap_first}Mapper.selectList(new LambdaQueryWrapper<${clz.clzName}>()
-                .eq(${clz.clzName}::getTenantId, user.getTenantId())
-                .in(${clz.clzName}::getId, ${clz.clzName?uncap_first}IdList)
-        );
-        List<Long> del${clz.clzName}IdList = exist${clz.clzName}List.stream().map(d -> {
-            d.setIsDel(true);
-            ${clz.clzName?uncap_first}Mapper.updateById(d);
-            return d.getId();
-        }).collect(toList());
-        return del${clz.clzName}IdList;
+        ${clz.clzName?uncap_first}DAO.removeByIds(delete${clz.clzName}IdList);
+        return delete${clz.clzName}IdList;
     }
 }
