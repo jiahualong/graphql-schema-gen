@@ -46,9 +46,9 @@ public class ${clz.clzName}Resolver implements GraphQLQueryResolver, GraphQLMuta
             if (Objects.isNull(loginUser)) {
                 return Result.tokenError();
             }
-        ${clz.clzName}DTO dto = ${clz.clzName?uncap_first}Service.get${clz.clzName}ById(id, appId, loginUser.getUserId(), loginUser.getTenantId());
+            ${clz.clzName}DTO dto = ${clz.clzName?uncap_first}Service.get${clz.clzName}ById(id, appId, loginUser.getUserId(), loginUser.getTenantId());
             return Objects.nonNull(dto)
-                    ? Result.success(${clz.clzName}Convert.INSTANCE.fromDTOToVo(dto))
+                    ? Result.success(${clz.clzName}Convert.INSTANCE.fromDTOToVO(dto))
                     : Result.error("查询失败");
         } catch (ServiceException se) {
             return Result.error(se.getMessage());
@@ -117,7 +117,7 @@ public class ${clz.clzName}Resolver implements GraphQLQueryResolver, GraphQLMuta
             }
             ${clz.clzName}DTO dto = ${clz.clzName?uncap_first}Service.save(${clz.clzName}Convert.INSTANCE.fromInputToDTO(input), loginUser.getUserId(), loginUser.getTenantId());
             return Objects.nonNull(dto)
-                    ? Result.success(dto.getCategoryId())
+                    ? Result.success(dto.getId())
                     : Result.error("保存失败");
         } catch (ServiceException se) {
             return Result.error(se.getMessage());

@@ -33,23 +33,23 @@ public interface I${clz.clzName}DAO extends IService<${clz.clzName}> {
     */
     List<${clz.clzName}> findInIdsByAppIdTenantId(@NotNull List<Long> ${clz.clzName?uncap_first}IdList, @NotNull Long appId, @NotNull Long tenantId);
 
-            /**
-             * 查询列表
-             *
-             * @param appId    应用ID
-             * @param tenantId 租户ID
-             * @return 列表结果
-             */
-            List<${clz.clzName}> findListByAppIdTenantId(@NotNull Long appId, @NotNull Long tenantId);
+    /**
+     * 查询列表
+     *
+     * @param appId    应用ID
+     * @param tenantId 租户ID
+     * @return 列表结果
+     */
+    List<${clz.clzName}> findListByAppIdTenantId(@NotNull Long appId, @NotNull Long tenantId);
 
-            /**
-             * page开发时应用需求分类表
-             *
-             * @param input    搜索条件
-             * @param userId   用户id
-             * @param tenantId 租户Id
-             * @return 搜索结果
-             */
-            PaginationResult<${clz.clzName}DTO> page${clz.clzName}(@NotNull Page${clz.clzName}Input input,
+    /**
+     * page开发时应用需求分类表
+     *
+     * @param input    搜索条件
+     * @param userId   用户id
+     * @param tenantId 租户Id
+     * @return 搜索结果
+     */
+    PaginationResult<${clz.clzName}DTO> page${clz.clzName}(@NotNull Page${clz.clzName}Input input,
                                                                    @NotNull Long userId, @NotNull Long tenantId);
 }

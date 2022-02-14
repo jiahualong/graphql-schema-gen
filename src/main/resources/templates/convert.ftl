@@ -44,7 +44,7 @@ public interface ${clz.clzName}Convert {
      * @param dto DTO
      * @return VO
      */
-    ${clz.clzName}VO fromDTOToVo(${clz.clzName}DTO dto);
+    ${clz.clzName}VO fromDTOToVO(${clz.clzName}DTO dto);
 
     /**
      * Input -> DTO

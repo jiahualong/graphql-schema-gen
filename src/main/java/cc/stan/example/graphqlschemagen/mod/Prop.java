@@ -65,6 +65,11 @@ public class Prop {
             graphqlType = "LocalDateTime";
             return;
         }
+        if (dbType.indexOf("date") >= 0) {
+            clzType = "LocalDate";
+            graphqlType = "LocalDate";
+            return;
+        }
 
         if (dbType.indexOf("double") >= 0) {
             clzType = "Double";

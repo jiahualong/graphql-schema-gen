@@ -1,7 +1,6 @@
 package model;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -33,7 +32,7 @@ public class ${clz.clzName} {
 
     /** id是否为空 */
     public boolean isNew() {
-        return Objects.nonNull(this.id) ? false : true;
+        return Objects.isNull(this.id);
     }
 }
 

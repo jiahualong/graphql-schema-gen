@@ -44,7 +44,7 @@ public class ${clz.clzName}DAOImpl extends ServiceImpl<${clz.clzName}Mapper, ${c
     @Override
     public ${clz.clzName} findByIdAndAppIdTenantId(@NotNull Long id, @NotNull Long appId, @NotNull Long tenantId) {
     LambdaQueryWrapper<${clz.clzName}> query = new LambdaQueryWrapper<${clz.clzName}>()
-            .eq(${clz.clzName}::getCategoryId, id)
+            .eq(${clz.clzName}::getId, id)
             .eq(${clz.clzName}::getAppId, appId)
             .eq(${clz.clzName}::getTenantId, tenantId)
             .eq(${clz.clzName}::getIfDelete, 0);

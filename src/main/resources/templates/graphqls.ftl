@@ -42,7 +42,7 @@ input  Save${clz.clzName}Input {
 }
 
 # 分页查询${clz.clzName}条件Input
-input Page${clz.clzName}ListInput {
+input Page${clz.clzName}Input {
     # 应用编号
     appId: ID!
     # 关键字
@@ -61,23 +61,15 @@ input Page${clz.clzName}ListInput {
 
 # -----------------result--------------------------
 
-# 查询返回Output
-type Find${clz.clzName}ListOutput {
-    data:[${clz.clzName}]
-    pageNum: Int
-    size: Int
-    total: Int
-}
-
 # get${clz.comment}ID查询
-type GetDevAppRequireCategoryByIdResult {
+type Get${clz.clzName}ByIdResult {
     code: Int
     msg: String
-    data: [${clz.clzName}]
+    data: ${clz.clzName}
 }
 
 # list${clz.comment}查询
-    type List${clz.clzName}Result {
+type List${clz.clzName}Result {
     code: Int
     msg: String
     data: [${clz.clzName}]
@@ -87,11 +79,11 @@ type GetDevAppRequireCategoryByIdResult {
 type Page${clz.clzName}Result {
     code: Int
     msg: String
-    data: Page${clz.clzName}Result
+    data: Page${clz.clzName}DataResult
 }
 
-# page开发时应用需求分类表结果
-type Page${clz.clzName}Result {
+# page${clz.comment}结果
+type Page${clz.clzName}DataResult {
     # 总数
     total: Int
     # 跳过前offset条数据
