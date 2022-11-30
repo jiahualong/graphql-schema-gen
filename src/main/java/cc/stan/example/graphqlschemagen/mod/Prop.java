@@ -34,7 +34,7 @@ public class Prop {
 
     private void dbTypeFill() {
 
-        if (dbType.indexOf("bigint") >= 0) {
+        if (dbType.indexOf("bigint") >= 0 || dbType.indexOf("int8") >= 0) {
             clzType = "Long";
             graphqlType = "ID";
             return;
@@ -44,22 +44,21 @@ public class Prop {
             graphqlType = "Boolean";
             return;
         }
-        if (dbType.indexOf("int8") >= 0) {
-            clzType = "Long";
-            graphqlType = "ID";
-            return;
-        }
         if (dbType.indexOf("int") >= 0) {
             clzType = "Integer";
             graphqlType = "Int";
             return;
         }
-        if (dbType.indexOf("varchar") >= 0 || dbType.indexOf("text") >= 0) {
+        if (dbType.indexOf("varchar") >= 0 || dbType.indexOf("text") >= 0 ||dbType.indexOf("character") >= 0) {
             clzType = "String";
             graphqlType = "String";
             return;
         }
-
+        if (dbType.indexOf("jsonb") >= 0) {
+            clzType = "String";
+            graphqlType = "String";
+            return;
+        }
         if (dbType.indexOf("datetime") >= 0 || dbType.indexOf("timestamp") >= 0) {
             clzType = "LocalDateTime";
             graphqlType = "LocalDateTime";
@@ -70,7 +69,6 @@ public class Prop {
             graphqlType = "LocalDate";
             return;
         }
-
         if (dbType.indexOf("double") >= 0) {
             clzType = "Double";
             graphqlType = "Float";

@@ -18,20 +18,9 @@ class CodeGenServiceTest {
     void genCode() {
 
         codeGenService.genCodes(CodeInfo.builder()
-                .program("HAIDA-SERVER")
-                .author("hualong.jia")
+                .program("SAMP5-SERVER")
+                .author("hualong.jia@seaboxdata.com")
                 .propList(Arrays.asList(
-
-                        "dev_app_switch,开发时用户切换应用表",
-                        "switch_id,int8,切换ID",
-                        "user_id,int8,用户ID",
-                        "app_id,int8,应用ID",
-                        "tenant_id,int8,租户ID",
-                        "creator,int8,创建人",
-                        "modifier,int8,修改人",
-                        "create_tm,timestamp,创建时间",
-                        "modify_tm,timestamp,修改时间",
-                        "if_delete,int4,是否删除"
 
 //                        "dev_app_require_category,开发时应用需求分类表",
 //                        "category_id        ,int8      , 需求分类ID ",
