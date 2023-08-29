@@ -1,0 +1,14 @@
+mm_common_attr_to_grp_assoc_upload,公用属性与组关联上传,元数据对象
+attr_to_common_grp_rela_id,bigint,属性与公用组关系标识
+batch_id,bigint,批次标识
+col_in_common_grp_seq_num,integer,字段在公用组序号
+common_attr_grp_id,bigint,公用属性组标识
+common_attr_id,bigint,公用属性标识
+conflict_situation_cd,character varying(30),冲突情况代码
+create_tm,timestamp without time zone,记录创建时间
+creator,bigint,记录创建人
+dm_id,bigint,模型标识
+if_delete,character varying(1),是否删除记录
+modifier,bigint,记录修改人
+modify_tm,timestamp without time zone,记录修改时间
+tenant_id,bigint,租户标识

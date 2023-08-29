@@ -1,0 +1,31 @@
+mm_fk_upload,外键上传,元数据对象
+batch_id,bigint,批次标识
+cascade_oper_child_added_proc_cd,character varying(30),级联操作子新增处理代码
+cascade_oper_child_delete_proc_cd,character varying(30),级联操作子删除处理代码
+cascade_oper_child_renew_proc_cd,character varying(30),级联操作子更新处理代码
+cascade_oper_parent_added_proc_cd,character varying(30),级联操作父新增处理代码
+cascade_oper_parent_delete_proc_cd,character varying(30),级联操作父删除处理代码
+cascade_oper_parent_renew_proc_cd,character varying(30),级联操作父更新处理代码
+child_entity_id,bigint,子实体标识
+child_id_type_cd,character varying(30),子标识类型代码
+create_tm,timestamp without time zone,记录创建时间
+creator,bigint,记录创建人
+describe,character varying(500),描述
+dm_id,bigint,模型标识
+fk_aspect_json,jsonb,外键外观json
+fk_cardinality_type_cd,character varying(30),外键基数类型代码
+fk_id,bigint,外键标识
+fk_level,integer,外键层次
+fk_name,character varying(500),外键名称
+if_delete,character varying(1),是否删除记录
+if_manual_edit,character varying(1),是否手工编辑
+if_only_logic,character varying(1),是否仅逻辑
+if_only_phy,character varying(1),是否仅物理
+modifier,bigint,记录修改人
+modify_tm,timestamp without time zone,记录修改时间
+nulls_cd,character varying(30),外键空值代码
+parent_entity_id,bigint,父实体标识
+parent_entity_key_id,bigint,父实体键标识
+parent_id_type_cd,character varying(30),父标识类型代码
+rela_category_cd,character varying(30),关系类别代码
+tenant_id,bigint,租户标识

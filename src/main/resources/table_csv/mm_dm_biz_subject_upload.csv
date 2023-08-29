@@ -1,0 +1,25 @@
+mm_dm_biz_subject_upload,模型业务主题上传,元数据对象
+batch_id,bigint,批次标识
+biz_subject_id,bigint,业务主题标识
+biz_subject_pre,character varying(500),业务主题前缀
+cn_abbr,character varying(500),中文简称
+cn_name,character varying(500),中文名称
+conflict_situation_cd,character varying(30),冲突情况代码
+create_tm,timestamp without time zone,记录创建时间
+creator,bigint,记录创建人
+describe,character varying(2000),描述
+dm_biz_subject_id,bigint,模型业务主题标识
+dm_id,bigint,模型标识
+en_abbr,character varying(500),英文简称
+en_name,character varying(500),英文名称
+ext_meta_module_def_id,bigint,扩展元模型定义标识
+ext_meta_module_json,jsonb,扩展元模型JSON
+icon,character varying(1000),图标
+if_delete,character varying(1),是否删除记录
+if_onetime_reference,character varying(1),是否一次性引用
+modifier,bigint,记录修改人
+modify_tm,timestamp without time zone,记录修改时间
+parent_biz_subject_id,bigint,上级业务主题标识
+seq_num,integer,序号
+subject_num,character varying(64),主题编码
+tenant_id,bigint,租户标识

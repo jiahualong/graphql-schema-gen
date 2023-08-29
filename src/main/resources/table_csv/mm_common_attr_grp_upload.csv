@@ -1,0 +1,32 @@
+mm_common_attr_grp_upload,公用属性组上传,元数据对象
+batch_id,bigint,批次标识
+cn_abbr,character varying(500),中文简称
+cn_name,character varying(500),中文名称
+common_attr_grp_id,bigint,公用属性组标识
+conflict_situation_cd,character varying(30),冲突情况代码
+create_tm,timestamp without time zone,记录创建时间
+creator,bigint,记录创建人
+css,jsonb,样式
+data_dm_entity_id,bigint,数据模型实体标识
+datatype_id,bigint,数据类型标识
+default_val,character varying(50),缺省值
+describe,character varying(500),描述
+dm_id,bigint,模型标识
+edit_status_cd,character varying(30),编辑状态代码
+edit_user_id,bigint,编辑用户标识
+en_abbr,character varying(500),英文简称
+en_name,character varying(500),英文名称
+ext_col,jsonb,扩展字段
+ext_col_def_id,bigint,扩展字段定义标识
+if_case_sensitive,character varying(1),是否大小写敏感
+if_delete,character varying(1),是否删除记录
+if_logic_dm,character varying(1),是否逻辑模型
+if_not_null,character varying(1),是否非空
+if_pdm,character varying(1),是否物理模型
+len,bigint,长度
+loc_cd,character varying(30),位置代码
+modifier,bigint,记录修改人
+modify_tm,timestamp without time zone,记录修改时间
+scale,bigint,精度
+sort,integer,排序
+tenant_id,bigint,租户标识

@@ -6,7 +6,16 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.toList;
 
 @SpringBootTest
 class CodeGenServiceTest {
@@ -15,36 +24,93 @@ class CodeGenServiceTest {
     private ICodeGenService codeGenService;
 
     @Test
-    void genCode() {
+    void genCodeFromCsv() {
+        List<String> csvList = Arrays.asList(
+                "mm_attr_field_upload.csv",
+                "mm_attr_fk_assoc_upload.csv",
+                "mm_attr_rela_upload.csv",
+                "mm_attr_to_pub_attr_assoc_upload.csv",
+                "mm_attr_to_rela_upload.csv",
+                "mm_attr_upload.csv",
+                "mm_canvas_to_entity_assoc_upload.csv",
+                "mm_canvas_to_fk_assoc_upload.csv",
+                "mm_canvas_to_sub_category_assoc_upload.csv",
+                "mm_canvas_upload.csv",
+                "mm_common_attr_grp_to_entity_assoc_upload.csv",
+                "mm_common_attr_grp_upload.csv",
+                "mm_common_attr_to_grp_assoc_upload.csv",
+                "mm_common_attr_upload.csv",
+                "mm_diagram_upload.csv",
+                "mm_dm_biz_subject_upload.csv",
+                "mm_dm_chk_rule_upload.csv",
+                "mm_dm_datatype_rela_upload.csv",
+                "mm_dm_datatype_upload.csv",
+                "mm_dm_ddl_rule_upload.csv",
+                "mm_dm_instance_upload.csv",
+                "mm_dm_term_assoc_upload.csv",
+                "mm_dm_term_upload.csv",
+                "mm_entity_label_assoc_upload.csv",
+                "mm_entity_line_upload.csv",
+                "mm_entity_rela_upload.csv",
+                "mm_entity_sub_category_upload.csv",
+                "mm_entity_to_rela_upload.csv",
+                "mm_entity_upload.csv",
+                "mm_export_default_rule_upload.csv",
+                "mm_fk_upload.csv",
+                "mm_folder_upload.csv",
+                "mm_key_assoc_upload.csv",
+                "mm_key_upload.csv",
+                "mm_sharding_assoc_upload.csv",
+                "mm_sharding_attr_rela_upload.csv",
+                "mm_sub_category_to_fk_assoc_upload.csv"
+        );
 
+        csvList.stream().forEach(f -> {
+            Path path = Paths.get("/Users/hualong/l2_code_space/graphql-schema-gen/src/main/resources/table_csv/" + f);
+            try (Stream<String> lines = Files.lines(path, StandardCharsets.UTF_8)) {
+                List<String> columns = lines.collect(toList());
+                System.out.println("proc:" + path);
+                genCode(columns);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+    }
+
+    private void genCode(List<String> columns) {
         codeGenService.genCodes(CodeInfo.builder()
-                .program("SAMP5-SERVER")
+                .program("SEAMODEL5-SERVER")
+                .author("hualong.jia@seaboxdata.com")
+                .propList(columns).build());
+    }
+
+    @Test
+    void genCode() {
+        codeGenService.genCodes(CodeInfo.builder()
+                .program("SEAMODEL5-SERVER")
                 .author("hualong.jia@seaboxdata.com")
                 .propList(Arrays.asList(
-                        "md_meta_obj_lineage,元数据对象血缘",
-                        "meta_obj_lineage_id,bigint,元数据对象血缘标识",
-                        "describe,character varying(2000),描述",
-                        "daq_tm,timestamp without time zone,采集时间",
-                        "origin_phy_ins_id,bigint,来源物理实例标识",
-                        "origin_meta_obj_id,bigint,来源元数据对象标识",
-                        "origin_meta_obj_en_name,character varying(500),来源元数据对象英文名称",
-                        "if_tmp_origin_obj,character varying(1),是否临时来源对象",
-                        "origin_refine_meta_attr_id,bigint,来源精细化元数据属性标识",
-                        "origin_refine_constant_val,character varying(2000),来源精细化常量值",
-                        "target_phy_ins_id,bigint,目标物理实例标识",
-                        "target_meta_obj_id,bigint,目标元数据对象标识",
-                        "target_meta_obj_en_name,character varying(500),目标元数据对象英文名称",
-                        "if_tmp_target_obj,character varying(1),是否临时目标对象",
-                        "lineage_relationship_type_cd,character varying(30),血缘关系类型代码",
-                        "lineage_origin_mode_cd,character varying(30),血缘来源方式代码",
-                        "meta_obj_oper_daq_id,bigint,元数据对象数据操作采集标识",
-                        "meta_obj_map_file_daq_id,bigint,元数据对象映射文件采集标识",
-                        "tenant_id,bigint,租户标识",
-                        "if_delete,character varying(1),是否删除记录",
-                        "creator,bigint,记录创建人",
+                        "mm_attr_field_upload,属性域上传,元数据对象",
+                        "attr_constraint,character varying(500),属性约束",
+                        "attr_def,character varying(500),属性定义",
+                        "attr_field_id,bigint,属性域标识",
+                        "batch_id,bigint,批次标识",
+                        "cn_name,character varying(500),中文名称",
+                        "conflict_situation_cd,character varying(30),冲突情况代码",
                         "create_tm,timestamp without time zone,记录创建时间",
+                        "creator,bigint,记录创建人",
+                        "describe,character varying(500),描述",
+                        "dm_datatype_id,bigint,模型数据类型标识",
+                        "dm_id,bigint,模型标识",
+                        "en_name,character varying(500),英文名称",
+                        "if_delete,character varying(1),是否删除记录",
                         "modifier,bigint,记录修改人",
-                        "modify_tm,timestamp without time zone,记录修改时间"
+                        "modify_tm,timestamp without time zone,记录修改时间",
+                        "parent_domain_id,bigint,父数据域标识",
+                        "scope_content,character varying(2000),范围内容",
+                        "scope_type_cd,character varying(30),范围类型代码",
+                        "sort,integer,排序",
+                        "tenant_id,bigint,租户标识"
                 )).build());
     }
 }

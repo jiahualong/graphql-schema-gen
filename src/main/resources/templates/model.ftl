@@ -1,6 +1,10 @@
 package model;
 
-import com.baomidou.mybatisplus.annotation.*;
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.seaboxdata.seamodel5.comm.model.BaseModel;
+import com.seaboxdata.seamodel5.core.mpp.annotation.InsertFill;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,18 +19,20 @@ import java.util.Objects;
  * @Author ${author}
  * @Date ${create}
  */
-@TableName("${clz.tblName}")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-public class ${clz.clzName} {
-
-@TableId(type = IdType.INPUT)
+@TableName(value = "${clz.tblName}", autoResultMap = true)
+public class ${clz.clzName} extends BaseModel{
+@TableId
 @TableLogic(value = "0", delval = "1")
 <#list proList as pro >
     /** ${pro.comm} */
+    @InsertFill
+    @TableField(fill = FieldFill.INSERT)
     private ${pro.clzType} ${pro.clzProp};
 </#list>
 

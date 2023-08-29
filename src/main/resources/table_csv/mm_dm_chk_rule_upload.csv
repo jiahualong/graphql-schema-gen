@@ -1,0 +1,18 @@
+mm_dm_chk_rule_upload,模型检查规则上传,元数据对象
+batch_id,bigint,批次标识
+chk_condition_content,bigint,检查条件内容
+cn_abbr,character varying(500),中文简称
+cn_name,character varying(500),中文名称
+condition_choose_case,jsonb,条件选择情况
+conflict_situation_cd,character varying(30),冲突情况代码
+create_tm,timestamp without time zone,记录创建时间
+creator,bigint,记录创建人
+describe,character varying(500),描述
+dm_chk_rule_id,bigint,模型检查规则标识
+en_abbr,character varying(500),英文简称
+en_name,character varying(500),英文名称
+if_delete,character varying(1),是否删除记录
+modifier,bigint,记录修改人
+modify_tm,timestamp without time zone,记录修改时间
+tenant_id,bigint,租户标识
+原模型检查规则标识,bigint,原模型检查规则标识
