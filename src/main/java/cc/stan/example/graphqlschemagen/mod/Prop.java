@@ -74,5 +74,10 @@ public class Prop {
             graphqlType = "Float";
             return;
         }
+        if (dbType.indexOf("numeric") >= 0) {
+            clzType = "BigDecimal";
+            graphqlType = "Float";
+            return;
+        }
     }
 }
