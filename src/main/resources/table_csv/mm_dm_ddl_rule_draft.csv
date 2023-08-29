@@ -1,0 +1,45 @@
+mm_dm_ddl_rule_draft,模型DDL规则草稿,元数据对象
+branch_id,bigint,分支标识
+create_tm,timestamp without time zone,记录创建时间
+creator,bigint,记录创建人
+dm_ddl_rule_id,bigint,模型DDL规则标识
+dm_id,bigint,模型标识
+if_col_case_sensitive,character varying(1),是否字段大小写敏感
+if_col_comment,character varying(1),是否字段注释
+if_col_default_val,character varying(1),是否字段默认值
+if_col_phy_seq,character varying(1),是否字段物理顺序
+if_delete,character varying(1),是否删除记录
+if_idx_table_clustered_idx,character varying(1),是否索引表聚集索引
+if_idx_table_fk,character varying(1),是否索引表外键
+if_idx_table_non_single_idx,character varying(1),是否索引表非唯一索引
+if_idx_table_pk,character varying(1),是否索引表主键
+if_idx_table_surrogate_key,character varying(1),是否索引表代理键
+if_idx_view_clustered_idx,character varying(1),是否索引视图聚集索引
+if_idx_view_non_single_idx,character varying(1),是否索引视图非唯一索引
+if_idx_view_surrogate_key,character varying(1),是否索引视图代理键
+if_other_pre,character varying(1),是否其它前置
+if_other_suf,character varying(1),是否其它后置
+if_refer_integrity_creation_fk,character varying(1),是否参考完整性创建外键
+if_refer_integrity_creation_pk,character varying(1),是否参考完整性创建主键
+if_refer_integrity_creation_surrogate_key,character varying(1),是否参考完整性创建代理键
+if_refer_integrity_fk_on_del,character varying(1),是否参考完整性外键删除时
+if_refer_integrity_fk_on_renew,character varying(1),是否参考完整性外键更新时
+if_table_case_sensitive,character varying(1),是否表大小写敏感
+if_table_creation,character varying(1),是否表创建
+if_table_creation_comment,character varying(1),是否表创建注释
+if_table_creation_distributed,character varying(1),是否表创建分布
+if_table_creation_ppi,character varying(1),是否表创建分区
+if_table_delete,character varying(1),是否表删除
+if_table_delete_comment,character varying(1),是否表删除注释
+if_table_pre,character varying(1),是否表前置
+if_table_suf,character varying(1),是否表后置
+if_view_case_sensitive,character varying(1),是否视图大小写敏感
+if_view_creation,character varying(1),是否视图创建
+if_view_creation_comment,character varying(1),是否视图创建注释
+if_view_delete,character varying(1),是否视图删除
+if_view_delete_comment,character varying(1),是否视图删除注释
+if_view_pre,character varying(1),是否视图前置
+if_view_suf,character varying(1),是否视图后置
+modifier,bigint,记录修改人
+modify_tm,timestamp without time zone,记录修改时间
+tenant_id,bigint,租户标识

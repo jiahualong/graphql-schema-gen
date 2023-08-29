@@ -33,18 +33,27 @@ public class CodeGenService implements ICodeGenService {
         Clz clz = fromSql(sql);
         List<FtlAndJava> ftlAndJavaList = Arrays.asList(
                 new FtlAndJava("convert.ftl" , "%sConvert.java"),
-                new FtlAndJava("DTO.ftl" , "%sDTO.java"),
-                new FtlAndJava("graphqls.ftl" , "%s.graphqls"),
-                new FtlAndJava("IDAO.ftl" , "I%sDAO.java"),
-                new FtlAndJava("IDAOImpl.ftl" , "%sDAOImpl.java"),
-                new FtlAndJava("IService.ftl" , "I%sService.java"),
-                new FtlAndJava("Mapper.ftl" , "%sMapper.java"),
                 new FtlAndJava("model.ftl" , "%s.java"),
-                new FtlAndJava("PageInput.ftl" , "Page%sInput.java"),
-                new FtlAndJava("Resolver.ftl" , "%sResolver.java"),
-                new FtlAndJava("SaveInput.ftl" , "Save%sInput.java"),
+
+                new FtlAndJava("IMppService.ftl" , "I%sMppService.java"),
+                new FtlAndJava("MppServiceImpl.ftl" , "%sMppServiceImpl.java"),
+                new FtlAndJava("IMppDao.ftl", "I%sMppDao.java"),
+                new FtlAndJava("MppDaoImpl.ftl", "%sMppDaoImpl.java"),
+
+                new FtlAndJava("IService.ftl" , "I%sService.java"),
                 new FtlAndJava("Service.ftl" , "%sServiceImpl.java"),
-                new FtlAndJava("VO.ftl" , "%sVO.java")
+
+                new FtlAndJava("Mapper.ftl" , "%sMapper.java"),
+                new FtlAndJava("MppBaseMapper.ftl" , "%sMppMapper.java")
+
+//                new FtlAndJava("DTO.ftl" , "%sDTO.java"),
+//                new FtlAndJava("graphqls.ftl" , "%s.graphqls"),
+//                new FtlAndJava("IDAO.ftl" , "I%sDAO.java"),
+//                new FtlAndJava("IDAOImpl.ftl" , "%sDAOImpl.java"),
+//                new FtlAndJava("PageInput.ftl" , "Page%sInput.java"),
+//                new FtlAndJava("Resolver.ftl" , "%sResolver.java"),
+//                new FtlAndJava("SaveInput.ftl" , "Save%sInput.java"),
+//                new FtlAndJava("VO.ftl" , "%sVO.java")
         );
 
         ftlAndJavaList.stream().forEach(fj -> {

@@ -1,0 +1,20 @@
+mm_dm_term_draft,模型术语草稿,元数据对象
+abbr,character varying(500),简称
+branch_id,bigint,分支标识
+create_tm,timestamp without time zone,记录创建时间
+creator,bigint,记录创建人
+describe,character varying(500),描述
+dm_id,bigint,模型标识
+dm_term_id,bigint,模型术语标识
+ext_col,jsonb,扩展字段
+ext_col_def_id,bigint,扩展字段定义标识
+if_base_root,character varying(1),是否基础词根
+if_delete,character varying(1),是否删除记录
+if_logic,character varying(1),是否逻辑
+if_phy,character varying(1),是否物理
+langue_type_cd,character varying(30),语言类型代码
+modifier,bigint,记录修改人
+modify_tm,timestamp without time zone,记录修改时间
+name,character varying(500),名称
+tenant_id,bigint,租户标识
+term_id,bigint,术语标识

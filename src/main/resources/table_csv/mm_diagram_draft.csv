@@ -1,0 +1,26 @@
+mm_diagram_draft,图形草稿,元数据对象
+axisx,integer,坐标x
+axisy,integer,坐标y
+branch_id,bigint,分支标识
+canvas_id,bigint,画布标识
+category_cd,character varying(30),类别代码
+cn_abbr,character varying(500),中文简称
+cn_name,character varying(500),中文名称
+content,character varying(500),内容
+create_tm,timestamp without time zone,记录创建时间
+creator,bigint,记录创建人
+css,jsonb,样式
+diagram_id,bigint,图形标识
+dm_id,bigint,模型标识
+edit_status_cd,character varying(30),编辑状态代码
+edit_user_id,bigint,编辑用户标识
+en_abbr,character varying(500),英文简称
+en_name,character varying(500),英文名称
+ext_col,jsonb,扩展字段
+ext_col_def_id,bigint,扩展字段定义标识
+height,integer,高度
+if_delete,character varying(1),是否删除记录
+modifier,bigint,记录修改人
+modify_tm,timestamp without time zone,记录修改时间
+tenant_id,bigint,租户标识
+width,integer,宽度

@@ -1,0 +1,20 @@
+mm_entity_line_draft,实体连线草稿,元数据对象
+branch_id,bigint,分支标识
+canvas_id,bigint,画布标识
+cn_abbr,character varying(500),中文简称
+cn_name,character varying(500),中文名称
+create_tm,timestamp without time zone,记录创建时间
+creator,bigint,记录创建人
+describe,character varying(500),描述
+en_abbr,character varying(500),英文简称
+en_name,character varying(500),英文名称
+entity_line_id,bigint,实体连线标识
+entity_sub_category_id,bigint,实体分类器标识
+fk_id,bigint,外键标识
+if_delete,character varying(1),是否删除记录
+modifier,bigint,记录修改人
+modify_tm,timestamp without time zone,记录修改时间
+points_axis_json,jsonb,点坐标json
+source_entity_id,bigint,源实体标识
+target_entity_id,bigint,目标实体标识
+tenant_id,bigint,租户标识

@@ -13,45 +13,11 @@ import org.mapstruct.factory.Mappers;
 public interface ${clz.clzName}Convert {
 
     ${clz.clzName}Convert INSTANCE = Mappers.getMapper(${clz.clzName}Convert.class);
-
     /**
-     * Model -> DTO
+     * Upload -> Draft
      *
-     * @param from Model
-     * @return DTO
+     * @param from Upload
+     * @return Draft
      */
-    ${clz.clzName}DTO toDTO(${clz.clzName} from);
-
-    /**
-     * Input -> Model
-     *
-     * @param input Input
-     * @return Model
-     */
-    ${clz.clzName} fromInput(Save${clz.clzName}Input input);
-
-    /**
-     * DTO -> Model
-     *
-     * @param dto DTO
-     * @return model
-     */
-    ${clz.clzName} fromDTOToModel(${clz.clzName}DTO dto);
-
-    /**
-     * DTO -> VO
-     *
-     * @param dto DTO
-     * @return VO
-     */
-    ${clz.clzName}VO fromDTOToVO(${clz.clzName}DTO dto);
-
-    /**
-     * Input -> DTO
-     *
-     * @param input input
-     * @return DTO
-     */
-    ${clz.clzName}DTO fromInputToDTO(Save${clz.clzName}Input input);
-
+     ${clz.clzName}Draft toDraft(${clz.clzName} from);
 }

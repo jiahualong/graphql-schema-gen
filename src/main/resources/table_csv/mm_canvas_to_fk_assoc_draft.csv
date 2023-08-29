@@ -1,0 +1,13 @@
+mm_canvas_to_fk_assoc_draft,画布与外键关联草稿,元数据对象
+branch_id,bigint,分支标识
+canvas_id,bigint,画布标识
+canvas_to_fk_assoc_id,bigint,画布与外键关联标识
+create_tm,timestamp without time zone,记录创建时间
+creator,bigint,记录创建人
+dm_id,bigint,模型标识
+fk_id,bigint,外键标识
+if_delete,character varying(1),是否删除记录
+modifier,bigint,记录修改人
+modify_tm,timestamp without time zone,记录修改时间
+points_axis_json,jsonb,点坐标json
+tenant_id,bigint,租户标识

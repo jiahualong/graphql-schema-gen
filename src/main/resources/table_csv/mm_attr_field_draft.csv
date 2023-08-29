@@ -1,0 +1,20 @@
+mm_attr_field_draft,属性域草稿,元数据对象
+attr_constraint,character varying(500),属性约束
+attr_def,character varying(500),属性定义
+attr_field_id,bigint,属性域标识
+branch_id,bigint,分支标识
+cn_name,character varying(500),中文名称
+create_tm,timestamp without time zone,记录创建时间
+creator,bigint,记录创建人
+describe,character varying(500),描述
+dm_datatype_id,bigint,模型数据类型标识
+dm_id,bigint,模型标识
+en_name,character varying(500),英文名称
+if_delete,character varying(1),是否删除记录
+modifier,bigint,记录修改人
+modify_tm,timestamp without time zone,记录修改时间
+parent_domain_id,bigint,父数据域标识
+scope_content,character varying(2000),范围内容
+scope_type_cd,character varying(30),范围类型代码
+sort,integer,排序
+tenant_id,bigint,租户标识

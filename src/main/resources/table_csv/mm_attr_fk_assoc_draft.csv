@@ -1,0 +1,15 @@
+mm_attr_fk_assoc_draft,属性外键关联草稿,元数据对象
+attr_fk_rela_id,bigint,属性外键关系标识
+branch_id,bigint,分支标识
+child_entity_attr_id,bigint,子实体属性标识
+combination_key_seq,integer,组合键顺序
+create_tm,timestamp without time zone,记录创建时间
+creator,bigint,记录创建人
+dm_id,bigint,模型标识
+fk_id,bigint,外键标识
+if_define_assoc,character varying(1),是否限定关联
+if_delete,character varying(1),是否删除记录
+modifier,bigint,记录修改人
+modify_tm,timestamp without time zone,记录修改时间
+parent_entity_attr_id,bigint,父实体属性标识
+tenant_id,bigint,租户标识

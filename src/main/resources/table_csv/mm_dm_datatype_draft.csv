@@ -1,0 +1,19 @@
+mm_dm_datatype_draft,模型数据类型草稿,元数据对象
+branch_id,bigint,分支标识
+create_tm,timestamp without time zone,记录创建时间
+creator,bigint,记录创建人
+datatype,character varying(64),数据类型
+datatype_class_cd,character varying(30),数据类型分类代码
+datatype_id,bigint,数据类型标识
+db_engine_id,bigint,数据库引擎标识
+db_engine_name,character varying(500),数据库引擎名称
+display_seq,integer,展示顺序
+dm_datatype_id,bigint,模型数据类型标识
+dm_id,bigint,模型标识
+format_suf_cd,character varying(30),格式后缀代码
+if_delete,character varying(1),是否删除记录
+if_required_len,character varying(1),是否必填长度
+if_required_scale,character varying(1),是否必填精度
+modifier,bigint,记录修改人
+modify_tm,timestamp without time zone,记录修改时间
+tenant_id,bigint,租户标识

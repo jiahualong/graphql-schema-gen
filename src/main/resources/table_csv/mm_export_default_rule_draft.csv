@@ -1,0 +1,38 @@
+mm_export_default_rule_draft,导出默认规则草稿,元数据对象
+branch_id,bigint,分支标识
+create_tm,timestamp without time zone,记录创建时间
+creator,bigint,记录创建人
+dm_id,bigint,模型标识
+export_default_rule_id,bigint,导出默认规则标识
+if_attr_comment,character varying(1),是否属性注释
+if_attr_describe_info,character varying(1),是否属性描述信息
+if_attr_name,character varying(1),是否属性名称
+if_attr_only_logic_phy,character varying(1),是否属性仅逻辑物理
+if_belong_subject,character varying(1),是否归属主题
+if_canvas_describe,character varying(1),是否画布描述
+if_canvas_name,character varying(1),是否画布名称
+if_col_seq_num,character varying(1),是否字段序号
+if_common_col_grp,character varying(1),是否公用字段组
+if_datatype,character varying(1),是否数据类型
+if_default_val,character varying(1),是否默认值
+if_delete,character varying(1),是否删除记录
+if_domain,character varying(1),是否值域
+if_domain_info,character varying(1),是否Domain信息
+if_entity_comment,character varying(1),是否实体注释
+if_entity_describe_info,character varying(1),是否实体描述信息
+if_entity_name,character varying(1),是否实体名称
+if_entity_only_logic_phy,character varying(1),是否实体仅逻辑物理
+if_fk,character varying(1),是否外键
+if_not_null,character varying(1),是否非空
+if_pk,character varying(1),是否主键
+if_ppi_distributed,character varying(1),是否分区分布
+if_rela_amount,character varying(1),是否关系数量
+if_rela_describe_info,character varying(1),是否关系描述信息
+if_rela_original_entity,character varying(1),是否关系原实体
+if_rela_target_entity,character varying(1),是否关系目标实体
+if_relationship_type,character varying(1),是否关系类型
+if_std_reference_info,character varying(1),是否标准引用信息
+if_table_attr,character varying(1),是否表属性
+modifier,bigint,记录修改人
+modify_tm,timestamp without time zone,记录修改时间
+tenant_id,bigint,租户标识

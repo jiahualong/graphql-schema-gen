@@ -1,0 +1,14 @@
+mm_dm_term_assoc_draft,模型术语关联草稿,元数据对象
+branch_id,bigint,分支标识
+create_tm,timestamp without time zone,记录创建时间
+creator,bigint,记录创建人
+distance,integer,距离
+dm_id,bigint,模型标识
+dm_term_id,bigint,模型术语标识
+if_delete,character varying(1),是否删除记录
+modifier,bigint,记录修改人
+modify_tm,timestamp without time zone,记录修改时间
+rela_dm_term_id,bigint,关系模型术语标识
+seq,integer,顺序
+tenant_id,bigint,租户标识
+term_relationship_type_cd,character varying(30),术语关系类型代码

@@ -1,0 +1,22 @@
+mm_dm_instance_draft,模型实例草稿,元数据对象
+assoc_dm_instance_id,bigint,关联模型实例标识
+branch_id,bigint,分支标识
+cn_abbr,character varying(500),中文简称
+cn_name,character varying(500),中文名称
+create_tm,timestamp without time zone,记录创建时间
+creator,bigint,记录创建人
+db_engine_id,bigint,数据库引擎标识
+describe,character varying(500),描述
+dm_id,bigint,模型标识
+dm_instance_id,bigint,模型实例标识
+dm_instance_type_cd,character varying(30),模型实例类型代码
+en_abbr,character varying(500),英文简称
+en_name,character varying(500),英文名称
+ext_col,jsonb,扩展字段
+ext_col_def_id,bigint,扩展字段定义标识
+if_delete,character varying(1),是否删除记录
+modifier,bigint,记录修改人
+modify_tm,timestamp without time zone,记录修改时间
+tenant_id,bigint,租户标识
+translate_capitalized_exch_cd,character varying(30),翻译大小写转换代码
+translate_mode_cd,character varying(30),翻译方式代码

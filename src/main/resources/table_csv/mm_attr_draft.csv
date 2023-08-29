@@ -1,0 +1,39 @@
+mm_attr_draft,属性草稿,元数据对象
+attr_constraint,character varying(500),属性约束
+attr_def,character varying(500),属性定义
+attr_field_id,bigint,属性域标识
+attr_id,bigint,属性标识
+base_std_item_id,bigint,基础标准项标识
+branch_id,bigint,分支标识
+cn_abbr,character varying(500),中文简称
+cn_name,character varying(500),中文名称
+common_attr_grp_id,bigint,公用属性组标识
+create_tm,timestamp without time zone,记录创建时间
+creator,bigint,记录创建人
+css,jsonb,样式
+default_val,character varying(50),缺省值
+describe,character varying(500),描述
+dm_datatype_id,bigint,模型数据类型标识
+dm_id,bigint,模型标识
+edit_status_cd,character varying(30),编辑状态代码
+edit_user_id,bigint,编辑用户标识
+en_abbr,character varying(500),英文简称
+en_name,character varying(500),英文名称
+entity_id,bigint,实体标识
+ext_col,jsonb,扩展字段
+ext_col_def_id,bigint,扩展字段定义标识
+if_according_type_field,character varying(1),是否依据类型域
+if_auto_translate,character varying(1),是否自动翻译
+if_conceptual_dm,character varying(1),是否概念模型
+if_delete,character varying(1),是否删除记录
+if_logic,character varying(1),是否逻辑
+if_not_null,character varying(1),是否非空
+if_phy,character varying(1),是否物理
+len,bigint,长度
+modifier,bigint,记录修改人
+modify_tm,timestamp without time zone,记录修改时间
+scale,bigint,精度
+scope_content,character varying(2000),范围内容
+scope_type_cd,character varying(30),范围类型代码
+sort,integer,排序
+tenant_id,bigint,租户标识

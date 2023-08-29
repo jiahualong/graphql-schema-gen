@@ -1,0 +1,14 @@
+mm_attr_rela_draft,属性关系草稿,元数据对象
+attr_id,bigint,属性标识
+attr_rela_id,bigint,属性关系标识
+attr_rela_role_cd,character varying(30),属性关系角色代码
+attr_to_rela_id,bigint,属性间关系标识
+branch_id,bigint,分支标识
+create_tm,timestamp without time zone,记录创建时间
+creator,bigint,记录创建人
+dm_id,bigint,模型标识
+entity_rela_id,bigint,实体关系标识
+if_delete,character varying(1),是否删除记录
+modifier,bigint,记录修改人
+modify_tm,timestamp without time zone,记录修改时间
+tenant_id,bigint,租户标识

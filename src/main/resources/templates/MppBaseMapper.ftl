@@ -1,7 +1,9 @@
 package mapper;
 
+import com.seaboxdata.seamodel5.core.mpp.base.MppBaseMapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -9,7 +11,7 @@ import org.springframework.stereotype.Repository;
  * @Author ${author}
  * @Date ${create}
  */
-@Mapper
 @Repository
-public interface ${clz.clzName}Mapper extends BaseMapper<${clz.clzName}> {
+@Mapper
+public interface ${clz.clzName}MppMapper extends MppBaseMapper<${clz.clzName}> {
 }

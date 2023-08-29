@@ -1,0 +1,29 @@
+mm_entity_draft,实体草稿,元数据对象
+branch_id,bigint,分支标识
+cn_abbr,character varying(500),中文简称
+cn_name,character varying(500),中文名称
+create_tm,timestamp without time zone,记录创建时间
+creation_entity_ddl,text,创建实体DDL
+creator,bigint,记录创建人
+css,jsonb,样式
+describe,character varying(500),描述
+dm_biz_subject_id,bigint,模型业务主题标识
+dm_id,bigint,模型标识
+edit_status_cd,character varying(30),编辑状态代码
+edit_user_id,bigint,编辑用户标识
+en_abbr,character varying(500),英文简称
+en_name,character varying(500),英文名称
+entity_id,bigint,实体标识
+entity_type_cd,character varying(30),实体类型代码
+ext_col,jsonb,扩展字段
+ext_col_def_id,bigint,扩展字段定义标识
+if_auto_translate,character varying(1),是否自动翻译
+if_conceptual_dm,character varying(1),是否概念模型
+if_delete,character varying(1),是否删除记录
+if_lock,character varying(1),是否锁定
+if_only_logic,character varying(1),是否仅逻辑
+if_only_phy,character varying(1),是否仅物理
+modifier,bigint,记录修改人
+modify_tm,timestamp without time zone,记录修改时间
+record_lock_person,bigint,记录锁定人
+tenant_id,bigint,租户标识

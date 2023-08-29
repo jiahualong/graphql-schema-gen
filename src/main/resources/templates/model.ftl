@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.seaboxdata.seamodel5.comm.model.BaseModel;
 import com.seaboxdata.seamodel5.core.mpp.annotation.InsertFill;
+import com.seaboxdata.seamodel5.core.mpp.enums.DefaultValueEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -31,18 +32,13 @@ import java.util.Objects;
 @TableName(value = "${clz.tblName}", autoResultMap = true)
 public class ${clz.clzName} extends BaseModel{
 @TableId
+@MppMultiId
 @TableLogic(value = "0", delval = "1")
 <#list proList as pro >
+
     /** ${pro.comm} */
-    @InsertFill
+    @InsertFill(value = DefaultValueEnum.${pro.insertFillValue})
     @TableField(fill = FieldFill.INSERT)
     private ${pro.clzType} ${pro.clzProp};
 </#list>
-
-    /** id是否为空 */
-    public boolean isNew() {
-        return Objects.isNull(this.id);
-    }
 }
-
-
