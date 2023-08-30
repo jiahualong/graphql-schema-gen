@@ -56,7 +56,7 @@ class CodeGenServiceTest {
 //                "mm_entity_rela_upload.csv",
 //                "mm_entity_sub_category_upload.csv",
 //                "mm_entity_to_rela_upload.csv",
-                "mm_entity_upload.csv"
+                "mm_entity_upload.csv",
 //                "mm_export_default_rule_upload.csv",
 //                "mm_fk_upload.csv",
 //                "mm_folder_upload.csv",
@@ -65,13 +65,17 @@ class CodeGenServiceTest {
 //                "mm_sharding_assoc_upload.csv",
 //                "mm_sharding_attr_rela_upload.csv",
 //                "mm_sub_category_to_fk_assoc_upload.csv"
+
+                "mm_entity_upload_excel.csv"
         );
 
         csvList.stream().forEach(f -> {
             Path path = Paths.get("/Users/hualong/l2_code_space/graphql-schema-gen/src/main/resources/table_csv/" + f);
             try (Stream<String> lines = Files.lines(path, StandardCharsets.UTF_8)) {
                 List<String> columns = lines
+                        .filter(e -> e.indexOf(",") > 0)
                         .map(e-> e.replace("\n",""))
+                        .filter(e -> !e.startsWith("--"))
                         .filter(e -> !e.startsWith("create_tm,"))
                         .filter(e -> !e.startsWith("creator,"))
                         .filter(e -> !e.startsWith("modifier,"))

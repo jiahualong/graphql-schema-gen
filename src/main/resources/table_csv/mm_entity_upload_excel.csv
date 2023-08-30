@@ -1,0 +1,26 @@
+mm_entity_upload_excel,实体上传,元数据对象
+
+entity_id,bigint,实体标识
+
+en_abbr,character varying(500),英文简称
+en_name,character varying(500),英文名称
+cn_abbr,character varying(500),中文简称
+cn_name,character varying(500),中文名称
+describe,character varying(500),描述
+
+-- entity_type_cd,character varying(30),实体类型代码
+-- ext_col,jsonb,扩展字段
+-- ext_col_def_id,bigint,扩展字段定义标识
+-- dm_biz_subject_id,bigint,模型业务主题标识[设置为0]
+-- dm_instance_id,bigint,模型实例标识 [删除]
+-- dm_id,bigint,模型标识[传入]
+-- creation_entity_ddl,text,创建实体DDL
+
+css,jsonb,样式
+
+if_auto_translate,character varying(1),是否自动翻译
+if_conceptual_dm,character varying(1),是否概念模型
+if_delete,character varying(1),是否删除记录
+if_lock,character varying(1),是否锁定
+if_only_logic,character varying(1),是否仅逻辑
+if_only_phy,character varying(1),是否仅物理

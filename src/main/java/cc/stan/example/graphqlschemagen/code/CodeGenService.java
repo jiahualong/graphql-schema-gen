@@ -44,7 +44,11 @@ public class CodeGenService implements ICodeGenService {
                 new FtlAndJava("Service.ftl" , "%sServiceImpl.java"),
 
                 new FtlAndJava("Mapper.ftl" , "%sMapper.java"),
-                new FtlAndJava("MppBaseMapper.ftl" , "%sMppMapper.java")
+                new FtlAndJava("MppBaseMapper.ftl" , "%sMppMapper.java"),
+
+                new FtlAndJava("excel_title.ftl" , "%s.excel_title.csv"),
+                new FtlAndJava("excel_model.ftl" , "%sModel.java")
+
 
 //                new FtlAndJava("DTO.ftl" , "%sDTO.java"),
 //                new FtlAndJava("graphqls.ftl" , "%s.graphqls"),
