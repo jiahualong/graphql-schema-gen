@@ -33,7 +33,10 @@ class CodeGenServiceTest {
 //                "mm_attr_rela_upload.csv",
 //                "mm_attr_to_pub_attr_assoc_upload.csv",
 //                "mm_attr_to_rela_upload.csv",
-//                "mm_attr_upload.csv",
+
+                "mm_attr_upload.csv",
+                "mm_attr_upload_excel.csv"
+
 //                "mm_canvas_to_entity_assoc_upload.csv",
 //                "mm_canvas_to_fk_assoc_upload.csv",
 //                "mm_canvas_to_sub_category_assoc_upload.csv",
@@ -56,7 +59,10 @@ class CodeGenServiceTest {
 //                "mm_entity_rela_upload.csv",
 //                "mm_entity_sub_category_upload.csv",
 //                "mm_entity_to_rela_upload.csv",
-                "mm_entity_upload.csv",
+
+//                "mm_entity_upload.csv",
+//                "mm_entity_upload_excel.csv"
+
 //                "mm_export_default_rule_upload.csv",
 //                "mm_fk_upload.csv",
 //                "mm_folder_upload.csv",
@@ -66,7 +72,6 @@ class CodeGenServiceTest {
 //                "mm_sharding_attr_rela_upload.csv",
 //                "mm_sub_category_to_fk_assoc_upload.csv"
 
-                "mm_entity_upload_excel.csv"
         );
 
         csvList.stream().forEach(f -> {
