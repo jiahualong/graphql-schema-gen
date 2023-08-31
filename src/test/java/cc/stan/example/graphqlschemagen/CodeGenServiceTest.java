@@ -34,8 +34,8 @@ class CodeGenServiceTest {
 //                "mm_attr_to_pub_attr_assoc_upload.csv",
 //                "mm_attr_to_rela_upload.csv",
 
-                "mm_attr_upload.csv",
-                "mm_attr_upload_excel.csv"
+//                "mm_attr_upload.csv",
+//                "mm_attr_upload_excel.csv"
 
 //                "mm_canvas_to_entity_assoc_upload.csv",
 //                "mm_canvas_to_fk_assoc_upload.csv",
@@ -49,7 +49,10 @@ class CodeGenServiceTest {
 //                "mm_dm_biz_subject_upload.csv",
 //                "mm_dm_chk_rule_upload.csv",
 //                "mm_dm_datatype_rela_upload.csv",
-//                "mm_dm_datatype_upload.csv",
+
+                "mm_dm_datatype_upload.csv",
+                "mm_dm_datatype_upload_excel.csv"
+
 //                "mm_dm_ddl_rule_upload.csv",
 //                "mm_dm_instance_upload.csv",
 //                "mm_dm_term_assoc_upload.csv",

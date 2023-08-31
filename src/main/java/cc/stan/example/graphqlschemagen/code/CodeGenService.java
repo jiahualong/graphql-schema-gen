@@ -35,15 +35,15 @@ public class CodeGenService implements ICodeGenService {
                 new FtlAndJava("convert.ftl" , "%sConvert.java"),
                 new FtlAndJava("model.ftl" , "%s.java"),
 
-                new FtlAndJava("IMppService.ftl" , "I%sMppService.java"),
-                new FtlAndJava("MppServiceImpl.ftl" , "%sMppServiceImpl.java"),
+//                new FtlAndJava("IMppService.ftl" , "I%sMppService.java"),
+//                new FtlAndJava("MppServiceImpl.ftl" , "%sMppServiceImpl.java"),
                 new FtlAndJava("IMppDao.ftl", "I%sMppDao.java"),
                 new FtlAndJava("MppDaoImpl.ftl", "%sMppDaoImpl.java"),
 
                 new FtlAndJava("IService.ftl" , "I%sService.java"),
                 new FtlAndJava("Service.ftl" , "%sServiceImpl.java"),
 
-                new FtlAndJava("Mapper.ftl" , "%sMapper.java"),
+//                new FtlAndJava("Mapper.ftl" , "%sMapper.java"),
                 new FtlAndJava("MppBaseMapper.ftl" , "%sMppMapper.java"),
 
                 new FtlAndJava("excel_title.ftl" , "%s.excel_title.csv"),
