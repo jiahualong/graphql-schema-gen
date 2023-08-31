@@ -43,21 +43,21 @@ public class CodeGenService implements ICodeGenService {
                 new FtlAndJava("IService.ftl" , "I%sService.java"),
                 new FtlAndJava("Service.ftl" , "%sServiceImpl.java"),
 
-//                new FtlAndJava("Mapper.ftl" , "%sMapper.java"),
                 new FtlAndJava("MppBaseMapper.ftl" , "%sMppMapper.java"),
 
                 new FtlAndJava("excel_title.ftl" , "%s.excel_title.csv"),
-                new FtlAndJava("excel_model.ftl" , "%sModel.java")
+                new FtlAndJava("excel_model.ftl" , "%sModel.java"),
 
 
-//                new FtlAndJava("DTO.ftl" , "%sDTO.java"),
-//                new FtlAndJava("graphqls.ftl" , "%s.graphqls"),
-//                new FtlAndJava("IDAO.ftl" , "I%sDAO.java"),
-//                new FtlAndJava("IDAOImpl.ftl" , "%sDAOImpl.java"),
+                new FtlAndJava("DTO.ftl" , "%sDTO.java"),
+                new FtlAndJava("graphqls.ftl" , "%s.graphqls"),
+                new FtlAndJava("Mapper.ftl" , "%sMapper.java"),
+                new FtlAndJava("IDAO.ftl" , "I%sDAO.java"),
+                new FtlAndJava("IDAOImpl.ftl" , "%sDAOImpl.java"),
 //                new FtlAndJava("PageInput.ftl" , "Page%sInput.java"),
-//                new FtlAndJava("Resolver.ftl" , "%sResolver.java"),
-//                new FtlAndJava("SaveInput.ftl" , "Save%sInput.java"),
-//                new FtlAndJava("VO.ftl" , "%sVO.java")
+                new FtlAndJava("Resolver.ftl" , "%sResolver.java"),
+                new FtlAndJava("SaveInput.ftl" , "Save%sInput.java"),
+                new FtlAndJava("VO.ftl" , "%sVO.java")
         );
 
         ftlAndJavaList.stream().forEach(fj -> {

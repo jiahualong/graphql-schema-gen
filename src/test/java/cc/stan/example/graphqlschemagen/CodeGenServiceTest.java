@@ -50,8 +50,10 @@ class CodeGenServiceTest {
 //                "mm_dm_chk_rule_upload.csv",
 //                "mm_dm_datatype_rela_upload.csv",
 
-                "mm_dm_datatype_upload.csv",
-                "mm_dm_datatype_upload_excel.csv"
+//                "mm_dm_datatype_upload.csv",
+//                "mm_dm_datatype_upload_excel.csv"
+
+                  "mm_import_export_batch_info.csv"
 
 //                "mm_dm_ddl_rule_upload.csv",
 //                "mm_dm_instance_upload.csv",

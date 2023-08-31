@@ -1,0 +1,14 @@
+mm_import_export_batch_info,导入导出批次信息,元数据对象
+batch_id,bigint,批次标识
+branch_id,bigint,分支标识
+create_tm,timestamp without time zone,记录创建时间
+creator,bigint,记录创建人
+dm_id,bigint,模型标识
+file_address,character varying(1000),文件地址
+if_delete,character varying(1),是否删除记录
+import_export_strg_cd,character varying(30),导入导出策略代码
+life_cycle_cd,character varying(30),生命周期代码
+modifier,bigint,记录修改人
+modify_tm,timestamp without time zone,记录修改时间
+tenant_id,bigint,租户标识
+version_info_id,bigint,版本信息标识

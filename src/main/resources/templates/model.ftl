@@ -41,4 +41,18 @@ public class ${clz.clzName} extends BaseModel{
     @TableField(fill = FieldFill.INSERT)
     private ${pro.clzType} ${pro.clzProp};
 </#list>
+
+    /** helper */
+    @TableField(exist = false)
+    private final transient BaseModelHelper<${clz.clzName}> baseModelHelper = new BaseModelHelper<>();
+
+    /** set base model */
+    public ${clz.clzName} setBaseModelValue(Long userId, Long tenantId) {
+        return baseModelHelper.setValue(this, userId, tenantId);
+    }
+
+    /** set base model */
+    public ${clz.clzName} setBaseModelValue(@NotNull BaseModel baseModel) {
+        return baseModelHelper.setValue(this, baseModel);
+    }
 }
