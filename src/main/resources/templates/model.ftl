@@ -14,6 +14,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import lombok.EqualsAndHashCode;
+import com.seaboxdata.seamodel5.sdm.draft.upload.helper.BaseModelHelper;
+import org.jetbrains.annotations.NotNull;
 
 import java.time.LocalDateTime;
 import java.util.Objects;

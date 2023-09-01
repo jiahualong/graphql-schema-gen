@@ -1,0 +1,13 @@
+mm_key_assoc_upload_excel,键关联上传,元数据对象
+batch_id,bigint,批次标识
+conflict_situation_cd,character varying(30),冲突情况代码
+-- create_tm,timestamp without time zone,记录创建时间
+-- creator,bigint,记录创建人
+-- dm_id,bigint,模型标识
+entity_attr_id,bigint,实体属性标识
+-- if_delete,character varying(1),是否删除记录
+key_id,bigint,键标识
+key_inner_attr_seq,integer,键内属性顺序
+-- modifier,bigint,记录修改人
+-- modify_tm,timestamp without time zone,记录修改时间
+-- tenant_id,bigint,租户标识

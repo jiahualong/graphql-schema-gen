@@ -1,0 +1,16 @@
+mm_entity_sub_category_upload_excel,实体分类器上传,元数据对象
+batch_id,bigint,批次标识
+class_name,character varying(500),分类名称
+-- conflict_situation_cd,character varying(30),冲突情况代码
+-- create_tm,timestamp without time zone,记录创建时间
+-- creator,bigint,记录创建人
+describe,character varying(500),描述
+distinction_attr_id,bigint,分类特征属性标识
+-- dm_id,bigint,模型标识
+entity_id,bigint,实体标识
+entity_sub_category_id,bigint,实体分类器标识
+-- if_delete,character varying(1),是否删除记录
+if_exclusive,character varying(1),是否排它
+-- modifier,bigint,记录修改人
+-- modify_tm,timestamp without time zone,记录修改时间
+-- tenant_id,bigint,租户标识

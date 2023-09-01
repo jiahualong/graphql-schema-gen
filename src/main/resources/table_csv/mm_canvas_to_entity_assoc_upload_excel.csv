@@ -1,0 +1,19 @@
+mm_canvas_to_entity_assoc_upload_excel,画布与实体关联上传,元数据对象
+axisx,integer,坐标x
+axisy,integer,坐标y
+batch_id,bigint,批次标识
+canvas_id,bigint,画布标识
+canvas_to_entity_assoc_id,bigint,画布与实体关联标识
+-- conflict_situation_cd,character varying(30),冲突情况代码
+-- create_tm,timestamp without time zone,记录创建时间
+-- creator,bigint,记录创建人
+-- dm_id,bigint,模型标识
+entity_id,bigint,实体标识
+entity_sub_category_id,bigint,实体分类器标识
+height,integer,高度
+if_auto_resize_size,character varying(1),是否自适应大小
+if_delete,character varying(1),是否删除记录
+-- modifier,bigint,记录修改人
+-- modify_tm,timestamp without time zone,记录修改时间
+-- tenant_id,bigint,租户标识
+width,integer,宽度
