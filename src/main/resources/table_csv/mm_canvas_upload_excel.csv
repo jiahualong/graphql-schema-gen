@@ -1,5 +1,4 @@
-mm_canvas_upload,画布上传,元数据对象
-batch_id,bigint,批次标识
+mm_canvas_upload_excel,画布上传,元数据对象
 canvas_id,bigint,画布标识
 cn_abbr,character varying(500),中文简称
 cn_name,character varying(500),中文名称

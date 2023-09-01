@@ -1,7 +1,7 @@
 mm_canvas_to_entity_assoc_upload_excel,画布与实体关联上传,元数据对象
 axisx,integer,坐标x
 axisy,integer,坐标y
-batch_id,bigint,批次标识
+-- batch_id,bigint,批次标识
 canvas_id,bigint,画布标识
 canvas_to_entity_assoc_id,bigint,画布与实体关联标识
 -- conflict_situation_cd,character varying(30),冲突情况代码

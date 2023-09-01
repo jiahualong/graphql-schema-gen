@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
+import org.apache.commons.text.WordUtils;
 
 import java.util.List;
 
@@ -19,6 +20,7 @@ import static java.util.stream.Collectors.toList;
 public class Clz {
     /** class名 */
     private String clzName;
+    private String clzNameUncapitalize;
     /** tbl名 */
     private String tblName;
     /** comment */
@@ -30,8 +32,10 @@ public class Clz {
     /** Input属性 */
     private List<Prop> propInputList;
 
+    /** 填充 */
     public Clz fill() {
         clzName = CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, tblName);
+        clzNameUncapitalize = WordUtils.uncapitalize(clzName);
         propList = propList.stream().map(Prop::fill).collect(toList());
         propVOList = propList.stream().filter(p -> {
             if (p.getClzProp().indexOf("creator") >= 0

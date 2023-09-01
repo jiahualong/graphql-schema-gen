@@ -1,5 +1,5 @@
 mm_fk_upload_excel,外键上传,元数据对象
-batch_id,bigint,批次标识
+-- batch_id,bigint,批次标识
 cascade_oper_child_added_proc_cd,character varying(30),级联操作子新增处理代码
 cascade_oper_child_delete_proc_cd,character varying(30),级联操作子删除处理代码
 cascade_oper_child_renew_proc_cd,character varying(30),级联操作子更新处理代码

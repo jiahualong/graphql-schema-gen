@@ -1,5 +1,5 @@
 mm_entity_sub_category_upload_excel,实体分类器上传,元数据对象
-batch_id,bigint,批次标识
+-- batch_id,bigint,批次标识
 class_name,character varying(500),分类名称
 -- conflict_situation_cd,character varying(30),冲突情况代码
 -- create_tm,timestamp without time zone,记录创建时间

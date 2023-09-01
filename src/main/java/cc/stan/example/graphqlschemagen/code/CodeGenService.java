@@ -41,7 +41,8 @@ public class CodeGenService implements ICodeGenService {
 
                 // Excel表对应模版
 //                new FtlAndJava("excel_title.ftl" , "%s.excel_title.txt"),
-                new FtlAndJava("excel_model.ftl" , "%sModel.java")
+//                new FtlAndJava("excel_model.ftl" , "%sModel.java")
+                new FtlAndJava("SheetProc.ftl", "SheetProc%s.java")
 
 //                new FtlAndJava("IMppService.ftl" , "I%sMppService.java"),
 //                new FtlAndJava("MppServiceImpl.ftl" , "%sMppServiceImpl.java"),

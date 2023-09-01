@@ -1,6 +1,6 @@
 mm_attr_fk_assoc_upload_excel,属性外键关联上传,元数据对象
 attr_fk_rela_id,bigint,属性外键关系标识
-batch_id,bigint,批次标识
+--batch_id,bigint,批次标识
 child_entity_attr_id,bigint,子实体属性标识
 combination_key_seq,integer,组合键顺序
 -- conflict_situation_cd,character varying(30),冲突情况代码

@@ -34,8 +34,6 @@ class CodeGenServiceTest {
 //                "mm_attr_to_pub_attr_assoc_upload.csv",
 //                "mm_attr_to_rela_upload.csv",
 
-//                "mm_attr_upload.csv",
-//                "mm_attr_upload_excel.csv"
 
 //                "mm_canvas_to_entity_assoc_upload.csv",
 //                "mm_canvas_to_fk_assoc_upload.csv",
@@ -50,8 +48,6 @@ class CodeGenServiceTest {
 //                "mm_dm_chk_rule_upload.csv",
 //                "mm_dm_datatype_rela_upload.csv",
 
-//                "mm_dm_datatype_upload.csv",
-//                "mm_dm_datatype_upload_excel.csv"
 
 //                "mm_import_export_batch_info.csv"
 
@@ -65,8 +61,6 @@ class CodeGenServiceTest {
 //                "mm_entity_sub_category_upload.csv",
 //                "mm_entity_to_rela_upload.csv",
 
-//                "mm_entity_upload.csv",
-//                "mm_entity_upload_excel.csv"
 
 //                "mm_export_default_rule_upload.csv",
 //                "mm_fk_upload.csv",
@@ -77,6 +71,9 @@ class CodeGenServiceTest {
 //                "mm_sharding_attr_rela_upload.csv",
 //                "mm_sub_category_to_fk_assoc_upload.csv"
 
+//                "mm_attr_upload.csv",
+//                "mm_entity_upload.csv",
+//                "mm_dm_datatype_upload.csv",
 //                "mm_fk_upload.csv",
 //                "mm_key_upload.csv",
 //                "mm_key_assoc_upload.csv",
@@ -87,6 +84,9 @@ class CodeGenServiceTest {
 //                "mm_folder_upload.csv"
 //                "mm_entity_sub_category_upload.csv"
 
+                "mm_dm_datatype_upload_excel.csv",
+                "mm_entity_upload_excel.csv",
+                "mm_attr_upload_excel.csv",
                 "mm_folder_upload_excel.csv",
                 "mm_canvas_upload_excel.csv",
                 "mm_entity_sub_category_upload_excel.csv",
